@@ -1,0 +1,204 @@
+
+<html lang="RU">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<meta name="format-detection" content="telephone=no">
+<!--	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">-->
+	<link href="css/style.css" rel="stylesheet">
+	<title>Barbershop</title>
+	<!-- <link rel="preconnect" href="https://fonts.googleapis.com"> -->
+	<!-- <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> -->
+	<!-- <link href="https://fonts.googleapis.com/css2?family=PT+Sans+Narrow:wght@400;700&display=swap" rel="stylesheet"> -->
+</head>
+<body>
+	<header class="main-header">
+		<a class="main-header__logo">
+			<picture>
+			<source media="(min-width: 1200px)" srcset="img/dest/logo-desktop.svg">
+			<source media="(min-width: 768px)" srcset="img/dest/logo-tablet.svg">
+			<img src="./img/dest/logo.svg" width="226" alt="logo barbershop">
+			</picture>
+		</a>
+		<nav class="main-nav main-nav--closed">
+			<button class="main-nav__toggle" type="button"><span class="v-hidden">Открыть меню</span></button>
+			<div class="main-nav__wrapper">
+				<ul class="site-nav">
+					<li class="site-nav__item site-nav__item--active">
+						<a href="index.html"><span>Главная</span></a>
+					</li>
+					<li class="site-nav__item ">
+						<a href="index.html"><span>Наши работы</span></a>
+					</li>
+					<li class="site-nav__item">
+						<a href="register_form.html"><span>Записаться</span></a>
+					</li>
+					<li class="site-nav__item">
+						<a href="index.html"><span>Контакты</span></a>
+					</li>
+					<li class="site-nav__item">
+						<a href="index.html"><span>Html academy</span></a>
+					</li>
+				</ul>
+				<ul class="user-form">
+					<li>
+						<a class="user-form__login" href="index.html">
+						<svg class="login-form__icon" data-name="login" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><defs>
+						<style>
+							.cls-1{fill:#fff;}
+						</style>
+						</defs><polygon class="cls-1" points="0 7 7.01 7 7.01 4.06 10.96 8.01 7.01 11.91 7.01 9.06 0 9.02 0 7"></polygon><polygon class="cls-1" points="7.01 0 7.01 2 14.03 2 14.03 13.99 7.01 13.99 7.01 16 16 16 16 0 7.01 0"></polygon></svg>Войти</a>
+					</li>
+				</ul>
+			</div>
+		</nav>
+	</header>
+<main>
+	<section class="stats">
+	<header class="stats__header">
+	<h1 class="v-hidden">Статистика Барбершоп</h1>
+	<strong class="stats--strong">Стрижка у нас <br>это выгодно!</strong>
+	<p>Мужская стрижка требует точного подхода. Обратимся к статистике</p>
+	<span class="stats__legend stats__legend--tablet">*— приведённые данные ложь</span>
+	</header>
+	<table class="stats__table">
+		<tr>
+			<td class="stats__value">1 500<sup>*</sup></td>
+			<td class="stats__field">рублей вложений</td>
+		</tr>   
+		<tr>    
+			<td class="stats__value">7 200</td>
+			<td class="stats__field">секунд времени мастера</td>
+		</tr>   
+		<tr>    
+			<td class="stats__value">90 000</td>
+			<td class="stats__field">постриженных волос</td>
+		</tr>   
+		<tr>    
+			<td class="stats__value">500 000<sup>*</sup></td>
+			<td class="stats__field">лайков и комплиментов</td>
+		</tr>	
+	</table>
+	<span class="stats__legend">*— приведённые данные ложь</span>
+	</section>
+	<section class="benefits">
+		<ul class="benefits__items">
+			<li class="benefits__fast benefits__fast--active">
+				<img width="95px" src="img/dest/scissors.svg" alt="fast.icon">
+				<h3>БЫСТРО</h3>
+				<p>Мы делаем свою работу быстро! Два часа пролетят незаметно и Вы — счастливый обладатель стильной стрижки-минутки</p>
+			</li>
+			<li class="benefits__cool">
+				<img width="95px" src="img/dest/chair.svg" alt="benefits.icon">
+				<h3>КРУТО</h3>
+				<p>Забудьте, как вы стриглись раньше. Мы сделаем из Вас звезду футбола или кино.Во всяком случае внешне.</p>
+			</li>
+			<li class="benefits__rich">
+				<img width="95px" src="img/dest/I.svg" alt="benefits_rich.icon">
+				<h3>ДОРОГО</h3>
+				<p>Наши мастера — профессионалы своего дела и не могут стоить дёшево. К тому же, разве цена не даёт определённый статус?</p>
+			</li>
+			<svg class="romb-icon">
+				<defs>
+					<g id="rect">
+					<rect class="rect" x="5" y="5" width="10" height="10"></rect>
+					</g>
+				</defs>
+			<use xlink:href="#rect" x="50"></use>
+			<use xlink:href="#rect" x="30"></use>
+			<use xlink:href="#rect" x="10"></use>
+			</svg>
+		</ul>
+	</section>
+	<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 34.07"><path d="M320 34.07H160L320 0v34.07zm-320 0h160L0 0v34.07z" fill="#f8f5f2"></path></svg>
+	<section class="news-and-action">
+		<h2 class="news-and-action__heading">Новости и акции</h2>
+		<article class="news-and-action__article">
+			<div class="data">
+				<svg width="50" height="60"><use xlink:href="./img/dest/sprite.svg#icon"></use>
+				</svg>
+				<time datetime="2021-09-29">
+					<h3>29</h3>
+					<span>сент</span>
+				</time>
+			</div>
+			<p>Нам наконец завезли Ягермайстер! Теперь вы можете пропусить стаканчик во время стрижки.</p>
+		</article>
+		<article class="news-and-action__article">
+			<div class="data">
+				<svg width="50" height="60">
+					<use xlink:href="/img/dest/sprite.svg#icon"></use>
+				</svg>
+				<time datetime="2021-09-19">
+					<h3>19</h3>
+					<span>сент</span>
+				</time>
+			</div>
+			<p>В нашей команде пополнение, Борис «Бритва» Стригунец, обладатель множества титулов и наград пополнил наши стройные ряды. Спешите записаться!</p>
+		</article>
+		<article class="news-and-action__article">
+			<div class="data">
+				<svg width="50" height="60">
+				<use xlink:href="./img/dest/sprite.svg#icon"></use>
+				</svg>
+				<time datetime="2021-09-09">
+					<h3>9</h3>
+					<span>сент</span>
+				</time>
+			</div>
+			<p>Все дорожает, а наши стрижки нет! Как так? Приходите, постригитесь и узнаете, в чем здесь подвох!</p>
+		</article>
+		<a class="button" href="news.html">Показать всё</a>
+	</section>
+	<section class="feedback">
+		<h2 class="feedback__heading">отзывы о нас</h2>
+		<a class="feedback__button button" href="#feedback.html">оставить свой</a>
+		<div class="feedback__slider">
+		<span class="slider__button--prev"></span>
+		<article class="feedback__article">
+			<picture>
+			<source media="(min-width: 768px)" srcset="img/dest/trevis1.jpg"> 
+			<img src="/img/dest/Trevis.jpg" alt="Trevis">
+			</picture>
+			<div class="text-wrapper">
+				<h4>Трэвис Баркер</h4>
+				<p>Спасибо за лысину! Был проездом в Москве, заскочил побриться, чтобы было видно новую татуировку!</p>
+			</div>
+		</article>
+		<span class="slider__button--next">
+		</span>
+		</div>
+		<svg class="romb-icon-end">
+			<defs>
+				<g id="rect">
+				<rect class="rect" x="5" y="5" width="10" height="10"></rect>
+				</g>
+			</defs>
+		<use xlink:href="#rect" x="50"></use>
+		<use xlink:href="#rect" x="30"></use>
+		<use xlink:href="#rect" x="10"></use>
+		</svg>
+	</section>
+	<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 34.07"><path fill="#f8f5f2" d="M0 0h320L160 34z"></path></svg>
+</main>
+<footer>
+	<div class="about-us">
+		<p><b>Барбершоп Бородинский</b><br>
+		г. Санкт-Петербург,<br> ул. Большая Конюшенная 19/8<br><span class="only-tab-and-desk">Тел.: </span><span>+7(812) 555-66-66</span></p>
+	</div>
+	<div class="social">
+		<span>Давайте дружить!</span>
+		<ul class="social__icon">
+			<li><a href="#vk"><img src="img/dest/vk-icon.png" alt="vk.icon"></a></li>
+			<li><a href="#fb"><img src="img/dest/facebook-icon.png" alt="fb.icon"></a></li>
+			<li><a href="#inst"><img src="img/dest/insta-icon.png" alt="insta.icon"></a></li>
+		</ul>
+	</div>
+	<div class="about-me">
+		<p>Разработано:</p>
+		<a href="#">Maks-xex</a>
+	</div>
+</footer>
+<script src="js/script.js"></script>
+</body> 
+</html>

@@ -1,0 +1,170 @@
+<!DOCKTYPE html>
+<html lang="RU">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="format-detection" content="telephone=no">
+    <!--	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">-->
+    <link href="css/style.css" rel="stylesheet">
+    <title>Barbershop</title>
+    <!-- <link rel="preconnect" href="https://fonts.googleapis.com"> -->
+    <!-- <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> -->
+    <!-- <link href="https://fonts.googleapis.com/css2?family=PT+Sans+Narrow:wght@400;700&display=swap" rel="stylesheet"> -->
+</head>
+<body>
+<header class="main-header">
+    <a class="main-header__logo main-header__register-logo">
+        <picture>
+            <source media="(min-width: 1200px)" srcset="img/dest/logo-desktop.svg">
+            <source media="(min-width: 768px)" srcset="img/dest/logo-tablet.svg">
+            <img src="./img/dest/logo.svg" width="226" alt="logo barbershop">
+        </picture>
+    </a>
+    <nav class="main-nav main-nav--closed">
+        <button class="main-nav__toggle" type="button"><span class="v-hidden">Открыть меню</span></button>
+        <div class="main-nav__wrapper" >
+            <ul class="site-nav">
+                <li class="site-nav__item">
+                    <a href="index.html"><span>Главная</span></a>
+                </li>
+                <li class="site-nav__item ">
+                    <a href="index.html"><span>Наши работы</span></a>
+                </li>
+                <li class="site-nav__item site-nav__item--active">
+                    <a href="register_form.html"><span>Записаться</span></a>
+                </li>
+                <li class="site-nav__item">
+                    <a href="index.html"><span>Контакты</span></a>
+                </li>
+                <li class="site-nav__item">
+                    <a href="index.html"><span>Html academy</span></a>
+                </li>
+            </ul>
+            <ul class="user-form">
+                <li>
+                    <a class="user-form__login" href="index.html">
+                        <svg class="login-form__icon" data-name="login" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+                            <defs>
+                            <style>
+                                .cls-1{fill:#fff;}
+                            </style>
+                            </defs>
+                            <polygon class="cls-1" points="0 7 7.01 7 7.01 4.06 10.96 8.01 7.01 11.91 7.01 9.06 0 9.02 0 7"/>
+                            <polygon class="cls-1" points="7.01 0 7.01 2 14.03 2 14.03 13.99 7.01 13.99 7.01 16 16 16 16 0 7.01 0"/>
+                        </svg>Войти</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</header>
+<main class="main-register">
+    <include src="src/img/dest/back.svg"></include>
+    <section class="register">
+        <div class="register__wrapper">
+        <h2>Записаться на стрижку</h2>
+        <a class="button hidden-on-mobile" href="index.html">На главную</a>
+        </div>
+        <form class="form-register" id="register-form" action="https://echo.htmlacademy.ru" method="get">
+        <div class="form-register__wrapper">
+            <p class="register__item"><label><input type="text" name="surname" placeholder="Фамилия"></label></p>
+            <p class="register__item"><label><input type="text" name="name" placeholder="Имя"></label></p>
+            <p class="register__item"><label><input type="text" name="patronymic" placeholder="Отчество"></label></p>
+            <p class="register__item"><label><input type="tel" name="phonenumber" placeholder="Контактный телефон"></label></p>
+            <p class="register__item"><label><input type="text" name="email" placeholder="Контактный e-mail"></label></p>
+            <p class="register__item"><label><textarea name="description" placeholder="Доп. информация для мастера"></textarea></label></p>
+        </div>
+            <fieldset>
+                <legend>Выберите модель бороды:</legend>
+                <ul>
+                    <li class="form-register__option">
+                        <label>
+                            <input type="radio" name="breadstyle"><span></span>адмирал
+                            <img width="52px" height="98px" src="img/dest/bread_admiral.svg" alt="bread_admiral.icon">
+                        </label>
+                    </li>
+                    <li class="form-register__option">
+                        <label>
+                            <input type="radio" name="breadstyle"><span></span>лесоруб
+                            <img width="58px" height="98px" src="img/dest/bread_lumberjack.svg" alt="bread_lumberjack.icon">
+                        </label>
+                    </li>
+                    <li class="form-register__option">
+                        <label>
+                            <input type="radio" name="breadstyle"><span></span>полярник
+                            <img width="64px" height="98px" src="img/dest/bread_explorer.svg" alt="bread_explorer.icon">
+                        </label>
+                    </li>
+                    <li class="form-register__option">
+                        <label>
+                            <input type="radio" name="breadstyle" value="Boyar"><span></span>боярин
+                            <img width="58px" height="98px" src="img/dest/bread_boyar.svg" alt="bread_boyar.icon">
+                        </label>
+                    </li>
+                    <li class="form-register__option">
+                        <label>
+                            <input type="radio" name="breadstyle"><span></span>мудрец<img width="46px" height="98px" src="img/dest/bread_sage.svg" alt="bread_sage.icon">
+                        </label>
+                    </li>
+                </ul>
+            </fieldset>
+            <fieldset>
+                <legend>Допольнительные услуги:</legend>
+                <ul>
+                    <li class="form-register__option">
+                        <label><input type="checkbox" name="paintbread"><span></span>Подкрасить бороду</label>
+                    </li>
+                    <li class="form-register__option">
+                        <label><input type="checkbox" name="curlmustache"><span></span>Накрутить усы</label>
+                    </li>
+                    <li class="form-register__option">
+                        <label><input type="checkbox" name="combbread"><span></span>Причесать бороду</label>
+                    </li>
+                    <li class="form-register__option">
+                        <label><input type="checkbox" name="trimtemples"><span></span>Подровнять виски</label>
+                    </li>
+                    <li class="form-register__option">
+                        <label><input type="checkbox" name="removegrayhair"><span></span>Убрать седину</label>
+                    </li>
+                    <li class="form-register__option">
+                        <label><input type="checkbox" name="baldspot"><span></span>Отполировать лысину</label>
+                    </li>
+                </ul>
+            </fieldset>
+            <button class="button" type="submit" form="register-form">Отправить заявку</button>
+        </form>
+    </section>
+    <include src="src/img/dest/end.svg"></include>
+</main>
+<footer>
+    <div class="about-us">
+        <p><b>Барбершоп Бородинский</b><br>
+            г. Санкт-Петербург,<br> ул. Большая Конюшенная 19/8<br><span class="only-tab-and-desk">Тел.: </span><span>+7(812) 555-66-66</span></p>
+    </div>
+    <div class="social">
+        <span>Давайте дружить!</span>
+        <ul class="social__icon">
+            <li><a href="#vk"><img src="img/dest/vk-icon.png" alt="vk.icon"></a></li>
+            <li><a href="#fb"><img src="img/dest/facebook-icon.png" alt="fb.icon"></a></li>
+            <li><a href="#inst"><img src="img/dest/insta-icon.png" alt="insta.icon"></a></li>
+        </ul>
+    </div>
+    <div class="about-me">
+        <p>Разработано:</p>
+        <a href="#">Maks-xex</a>
+    </div>
+</footer>
+<div class="popup__wrapper">
+    <section class="popup-success">
+        <h2>ЭТО УСПЕХ!</h2>
+        <p>Ваша заявка отправлена.  Ожидайте, мы свяжемся с вами как только будет минутка.</p>
+        <button class="button modal-success--close" type="button">ЗАКРЫТЬ ОКНО</button>
+    </section>
+    <section class="popup-fail">
+        <h2>НЕУДАЧА</h2>
+        <p>Что-то пошло не так. Проверьте выделенные красным поля формы.</p>
+        <button class="button modal-fail--close" type="submit" form="register-form">ок</button>
+    </section>
+</div>
+<script src="js/script.js"></script>
+</body>
+</html>
