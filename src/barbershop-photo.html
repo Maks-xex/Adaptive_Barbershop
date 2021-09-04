@@ -1,0 +1,200 @@
+<!DOCKTYPE html>
+<html lang="RU">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="format-detection" content="telephone=no">
+    <!--	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">-->
+    <link href="css/style.css" rel="stylesheet">
+    <title>Barbershop</title>
+</head>
+<body>
+<header class="main-header">
+    <a class="main-header__logo">
+        <picture>
+            <source media="(min-width: 1200px)" srcset="img/dest/logo-desktop.svg">
+            <source media="(min-width: 768px)" srcset="img/dest/logo-tablet.svg">
+            <img src="./img/dest/logo.svg" width="226" alt="logo barbershop">
+        </picture>
+    </a>
+    <nav class="main-nav main-nav--closed">
+        <button class="main-nav__toggle" type="button"><span class="v-hidden">Открыть меню</span></button>
+        <div class="main-nav__wrapper" >
+            <ul class="site-nav">
+                <li class="site-nav__item">
+                    <a href="index.html"><span>Главная</span></a>
+                </li>
+                <li class="site-nav__item site-nav__item--active">
+                    <a href="barbershop-photo.html"><span>Наши работы</span></a>
+                </li>
+                <li class="site-nav__item">
+                    <a href="register_form.html"><span>Записаться</span></a>
+                </li>
+                <li class="site-nav__item">
+                    <a href="#"><span>Контакты</span></a>
+                </li>
+            </ul>
+            <ul class="user-form">
+                <li>
+                    <a class="user-form__login" href="index.html">
+                        <svg class="login-form__icon" data-name="login" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+                            <defs>
+                                <style>
+                                    .cls-1{fill:#fff;}
+                                </style>
+                            </defs>
+                            <polygon class="cls-1" points="0 7 7.01 7 7.01 4.06 10.96 8.01 7.01 11.91 7.01 9.06 0 9.02 0 7"/>
+                            <polygon class="cls-1" points="7.01 0 7.01 2 14.03 2 14.03 13.99 7.01 13.99 7.01 16 16 16 16 0 7.01 0"/>
+                        </svg>
+                        <span>Войти</span></a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</header>
+<main class="main-barbershop-photo">
+    <include src="src/img/dest/back.svg"></include>
+    <section class="our-works">
+        <h3 class="our-works__title">наши работы</h3>
+        <a class="button hidden-on-mobile" href="index.html"><span>На главную</span></a>
+        <article class="our-works__item">
+        <a href="#">
+            <picture>
+                <source media="(min-width:1200px)" srcset="img/dest/barbershop_photo-desktop/photo-1-desktop.jpg">
+                <source media="(min-width:768px)" srcset="img/dest/barbershop_photo-tablet/photo-1-tablet.jpg">
+                <img src="img/dest/barbershop_photo-mobile/photo-1-mobile.jpg" alt="первая работа">
+            </picture>
+        </a>
+            <div class="our-works__content">
+                <h4 >Лжепётр Мчиславский</h4>
+                <p>Где я только не стригся, но так как делаете это вы — не умеет никто другой! Еще раз спасибо и до скорого!</p>
+                <div class="our-works__category">
+                    <img width="21" height="20" src="img/dest/scissors-icon.svg">
+                    <span>Стрижка</span>
+                    <img width="23" height="21" src="img/dest/beard-icon.svg">
+                    <span>Бритье</span>
+                    <img class="last-element" width="45" height="15" src="img/dest/mustache-icon.svg">
+                    <span>Усы</span>
+                </div>
+            </div>
+        </article>
+        <article class="our-works__item">
+        <a href="#">
+            <picture>
+                <source media="(min-width:1200px)" srcset="img/dest/barbershop_photo-desktop/photo-2-desktop.jpg">
+                <source media="(min-width:768px)" srcset="img/dest/barbershop_photo-tablet/photo-2-tablet.jpg">
+                <img src="img/dest/barbershop_photo-mobile/photo-2-mobile.jpg" alt="первая работа">
+            </picture>
+        </a>
+            <div class="our-works__content">
+                <h4 >Саша Мальцев</h4>
+                <p>Попросил омолодить и омолодили! Кто теперь скажет, что мне 45?</p>
+                <div class="our-works__category">
+                    <img width="21" height="20" src="img/dest/scissors-icon.svg">
+                    <span>Стрижка</span>
+                </div>
+            </div>
+        </article>
+        <article class="our-works__item">
+        <a href="#">
+            <picture>
+                <source media="(min-width:1200px)" srcset="img/dest/barbershop_photo-desktop/photo-3-desktop.jpg">
+                <source media="(min-width:768px)" srcset="img/dest/barbershop_photo-tablet/photo-3-tablet.png">
+                <img src="img/dest/barbershop_photo-mobile/photo-3-mobile.jpg" alt="первая работа">
+            </picture>
+        </a>
+            <div class="our-works__content">
+                <h4 >Владимир Иваныч</h4>
+                <p>К зимнему сезону — готов!</p>
+                <div class="our-works__category">
+                    <img width="23" height="21" src="img/dest/beard-icon.svg">
+                    <span>Бритье</span>
+                    <img class="last-element" width="45" height="15" src="img/dest/mustache-icon.svg">
+                    <span>Усы</span>
+                </div>
+            </div>
+        </article>
+        <article class="our-works__item">
+        <a href="#">
+            <picture>
+                <source media="(min-width:1200px)" srcset="img/dest/barbershop_photo-desktop/photo-4-desktop.jpg">
+                <source media="(min-width:768px)" srcset="img/dest/barbershop_photo-tablet/photo-4-tablet.jpg">
+                <img src="img/dest/barbershop_photo-mobile/photo-4-mobile.jpg" alt="первая работа">
+            </picture>
+        </a>
+            <div class="our-works__content">
+                <h4 >Винстон Синий</h4>
+                <p>Как только заростаю и волосы начинают мешать видеть — бегом в Бородинский!</p>
+                <div class="our-works__category">
+                    <img width="21" height="20" src="img/dest/scissors-icon.svg">
+                    <span>Стрижка</span>
+                </div>
+            </div>
+        </article>
+    </section>
+    <include src="src/img/dest/end.svg"></include>
+    <section class="price-current">
+        <h3>ПРЕЙСКУРАНТ</h3>
+        <div class="price-current__wrapper">
+            <table>
+                <tr>
+                    <td>1</td>
+                    <td>Классическая стрижка</td>
+                    <td>с мытьём головы</td>
+                    <td>1 500 руб.</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Современный вариант</td>
+                    <td>с мытьём головы</td>
+                    <td>1 500 руб.</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Индивидуальный подход</td>
+                    <td>с мытьём головы</td>
+                    <td>2 000 руб.</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>Бритьё бороды</td>
+                    <td>без мытья</td>
+                    <td>500 руб.</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>Бритьё головы</td>
+                    <td>с мытьём головы</td>
+                    <td>1 000 руб.</td>
+                </tr>
+            </table>
+            <div class="coupon">
+                <img src="img/dest/clock.svg">
+                <p>C 10:00 до 14:00<br>
+                скидка 20%</p>
+            </div>
+        </div>
+    </section>
+</main>
+<footer>
+    <div class="about-us">
+        <p><b>Барбершоп Бородинский</b><br>
+            г. Санкт-Петербург,<br> ул. Большая Конюшенная 19/8<br><span class="only-tab-and-desk">Тел.: </span><span>+7(812) 555-66-66</span></p>
+    </div>
+    <div class="social">
+        <span>Давайте дружить!</span>
+        <ul class="social__icon">
+            <li><a href="#vk"><img src="img/dest/vk-icon.png" alt="Мы в контакте"></a></li>
+            <li><a href="#fb"><img src="img/dest/facebook-icon.png" alt="Наш фейсбук"></a></li>
+            <li><a href="#inst"><img src="img/dest/insta-icon.png" alt="Наш Инстаграм"></a></li>
+        </ul>
+    </div>
+    <div class="about-me">
+        <p>Разработано:</p>
+        <a href="#"><span>Maks-xex</span></a>
+    </div>
+</footer>
+<script src="js/script.js"></script>
+</body>
+</html>
+

@@ -116,8 +116,13 @@ ul {
 	top:0;
 	right:0;
 	z-index:2;
-	
-	display:block;
+	cursor: pointer;
+	&:active{
+		background-color: #624530;
+		&::before, &:after{
+		opacity: 0.3;
+		}
+	}
 	width:70px;
 	height:50px;
 	
@@ -148,10 +153,6 @@ ul {
     color: #ffffff;
     text-transform: uppercase;
     text-decoration: none;
-    // background-color: #826550;
-    // border-top: 1px solid #886e5b;
-    // border-bottom: 1px solid #71543f;
-    // padding-right: 50px;
 }
 body {
 	min-width:320px;
@@ -190,7 +191,22 @@ sup {
 .news-and-action {
 	border-bottom:1px solid #e5ddd5;
 	margin-top:-1px;
-} 
+}
+.news-and-action__article a {
+	display: flex;
+	text-decoration: none;
+	color: #000000;
+	&:hover {
+		color: #826550;
+		text-decoration: underline;
+	}
+	&:active {
+		color: #6a4d38;
+		& .data > time{
+			opacity: 0.3;
+		}
+	}
+}
 .news-and-action, .feedback {
 	background:@bg-lightgrey;
 	color:#000;
@@ -207,6 +223,18 @@ sup {
     color: white;
     line-height: 0.7;
     padding-top: 5px;
+}
+.news-and-action .button,
+.feedback__button,
+.hidden-on-mobile {
+	&:active {
+		background-color: #d5c9bd;
+		& > span{
+			opacity: 0.3;
+			color: #000000;
+			text-decoration: none;
+		}
+	}
 }
 .feedback {
 	padding:30px 39px 0 20px;
@@ -233,6 +261,12 @@ sup {
 		text-transform:uppercase;
 		font-weight:bold;
 		display:inline-block;
+		&:active {
+			background-color: #252525;
+			& span {
+				opacity: 0.3;
+			}
+		}
 	}
 	& p {
 		margin:35px auto 15px;
@@ -251,7 +285,30 @@ sup {
 	min-height:101px;
 	justify-content:center;
 	align-items:center;
-	border:2px solid #2e2e2e;
+	border:1px solid #2e2e2e;
+	& li {
+		border: 1px solid #2e2e2e;
+		width: 100%;
+		height: 99px;
+	}
+	& a {
+		position: absolute;
+		&:active {
+			background-color: #252525;
+			& img {
+				opacity: 0.3;
+			}
+		}
+	}
+}
+.vkontakte{
+	padding: 36px 40px;
+}
+.facebook {
+	padding: 30px 42px;
+}
+.instagram {
+	padding: 31px 33px;
 }
 .button {
 	text-transform:uppercase;
@@ -265,6 +322,7 @@ sup {
 	width:max-content;
 	border:	1px solid #e5ddd5;
 	margin: 0 auto;
+	cursor: pointer;
 }
 .data {
 	position:relative;
@@ -275,7 +333,19 @@ sup {
 }
 
 //registre-form
-
+.form-register .button,
+.popup-success .button,
+.popup-fail .button {
+	&:hover {
+		background-color: #6a4d38;
+	}
+	&:active span {
+		opacity: 0.3;
+	}
+	&:disabled {
+		background-color: #aeaeae;
+	}
+}
 .form-register {
 	margin: 0;
 }
@@ -321,6 +391,11 @@ sup {
 		width: 21px;
 		height: 2px;
 		background-color: #000000;
+}
+.form-register__option label:active {
+	& input[type="checkbox"] + span,& input[type="radio"] + span {
+		background-color: #d5c9bd;
+	}
 }
 .form-register__option label input[type="checkbox"]:checked + span::before {
 	width: 9px;
@@ -396,13 +471,13 @@ sup {
 .form-register {
 	text-align: center;
 	& input[type="text"], input[type="tel"], input[type="e-mail"]{
-		width: 280px;
+		width: 90%;
 		height: 50px;
 		color: black;
 		border: 1px solid gray;
 	}
 	& textarea {
-		width: 280px;
+		width: 90%;
 		height: 120px;
 		resize: none;
 		border:1px solid gray;
@@ -415,6 +490,9 @@ sup {
 			padding-bottom: 38px;
 		}
 	}
+}
+.form-register__option label {
+	cursor: pointer;
 }
 fieldset:nth-of-type(1) .form-register__option {
 	padding: 0 13px 40px;
@@ -435,6 +513,57 @@ fieldset:nth-of-type(1) .form-register__option {
 	margin: 0 auto;
 }
 //register-form end
+
+//barbershop-photo start
+.our-works {
+	background-color: @bg-lightgrey;
+  	color: #000000;
+  	padding: 0 20px 34px;
+	margin-bottom: -1px;
+}
+.our-works__title {
+  text-transform: uppercase;
+  font-weight: bold;
+  text-align: center;
+  color: #000000;
+  padding: 33px 57px 33px 55px;
+}
+.our-works__item {
+  	border: 1px solid #e5ddd5;
+	margin-bottom: 20px;
+  & h4{
+    padding: 24px 0 21px 0;
+  }
+  & p {
+    padding: 0 0 23px 0;
+  }
+	&:last-of-type {
+		margin-bottom: 0;
+	}
+}
+.our-works__content {
+  margin: 0 35px 24px 22px;
+}
+.our-works__category {
+  	display: flex;
+	flex-wrap: wrap;
+	width: 250px;
+	& img {
+			height: fit-content;
+			position: relative;
+			top: 4px;
+	}
+	& span {
+		padding: 0px 36px 20px 15px;
+		&:last-of-type {
+			padding-bottom: 0;
+		}
+	}
+}
+img.last-element {
+		top: 9px;
+		left: -12px;
+}
 @media (max-width: @mobile-screen) {
   .main-nav--closed .site-nav__item {
     display: none; 
@@ -452,6 +581,11 @@ fieldset:nth-of-type(1) .form-register__option {
     border-top: 1px solid #886e5b;
     border-bottom: 1px solid #71543f;
     padding-right: 50px;
+	  &:active {
+		  background-color: #624530;
+		  border-color: #624530;
+		  opacity: 0.3;
+	  }
   }
   .main-nav--opened .main-nav__toggle {
 	left:0;
@@ -639,19 +773,17 @@ fieldset:nth-of-type(1) .form-register__option {
 	footer {
 		border:1px solid #2e2e2e;
 	}
-	.social__icon {
-		& li a {
-		padding:42px 39px 36px 44px;
-		border-right:2px solid #2e2e2e;
-		}
-		& li:nth-of-type(2) a {		
-			padding:49px 42px 29px 42px;
-		}	
-		& li:nth-of-type(3) a {		
-			padding:47px 34px 31px 38px;
-			border:none;
-		}
+	//social icon
+	.vkontakte{
+		padding: 36px 40px;
 	}
+	.facebook {
+		padding: 30px 42px;
+	}
+	.instagram {
+		padding: 31px 33px;
+	}
+
 	.about-us {
 		text-align:center;
 		border-top:1px solid #2e2e2e;
@@ -672,7 +804,9 @@ fieldset:nth-of-type(1) .form-register__option {
 		display:none;
 	}
 	//register-form start
-
+	main > svg:first-of-type {
+		display: none;
+	}
 	.register {
 		padding-bottom: 39px;
 		margin-bottom: -1px;
@@ -704,9 +838,6 @@ fieldset:nth-of-type(1) .form-register__option {
 	fieldset:nth-of-type(2) label {
 		padding-top: 7px;
 		padding-bottom: 6px;
-	}
-	main svg:first-child {
-		display: none;
 	}
 	//register-form end
 }
@@ -760,6 +891,13 @@ fieldset:nth-of-type(1) .form-register__option {
 			padding: 24px 21px;
 			padding-bottom: 23px;
 			text-align:center;
+			&:hover {
+				color: #826550;
+			}
+			&:active span{
+				color: #ffffff;
+				opacity: 0.3;
+			}
 		}
 		& li {
 			flex-grow:1;
@@ -782,6 +920,12 @@ fieldset:nth-of-type(1) .form-register__option {
 	.user-form__login {
 		font-size:0;
 		padding:51.5px;
+		&:hover .login-form__icon {
+			opacity: 1;
+			& > .cls-1 {
+				fill: #826550;
+			}
+		}
 	}
 	.login-form__icon {
 		width:16px;
@@ -992,24 +1136,28 @@ fieldset:nth-of-type(1) .form-register__option {
 		order: 3;
 		width:100%;
 		margin-bottom:59px;
-		& li a {
-			
-		}
+	}
+	.vkontakte{
+		padding: 36px 94px;
+	}
+	.facebook {
+		padding: 30px 97px;
+	}
+	.instagram {
+		padding: 31px 88px;
 	}
 	@media(max-width:1199px) {
 		.social__icon {
 			width:642px;
-			& li a{
-				padding:42px 92px 36px 97px;
-				border-right:2px solid #2e2e2e;
-			}
-			& li:nth-of-type(2) a{
-				padding: 48px 87px 29px 107px;
-			}
-			& li:nth-of-type(3) a{
-				padding:47px 87px 31px 91px;
-				border:none;
-			}
+				&.vkontakte{
+					padding: 36px 40px;
+				}
+				&.facebook {
+					padding: 30px 42px;
+				}
+				&.instagram {
+					padding: 31px 33px;
+				}
 		}
 	}
 	.about-me {
@@ -1060,6 +1208,37 @@ fieldset:nth-of-type(1) .form-register__option {
 			width: 33.33%;
 		}
 	}
+	.form-register fieldset legend {
+		width: 100%;
+		display: flex;
+	}
+	legend {
+		font-size: 30px;
+
+		&::before, &::after {
+			content: '';
+			display: inline-block;
+			vertical-align: middle;
+			box-sizing: border-box;
+			width: 20%;
+			height: 1px;
+			background: #e5ddd5;
+			border: solid #e5ddd5;
+			border-width: 0px 10px;
+			position: relative;
+			top: 14px;
+			flex-grow: 1;
+			//margin: 0 40px;
+		}
+
+		&::before {
+			margin-right: 20px;
+		}
+
+		&::after {
+			margin-left: 20px;
+		}
+	}
 	.form-register fieldset:nth-of-type(1) ul {
 		justify-content: space-between;
 	}
@@ -1077,7 +1256,6 @@ fieldset:nth-of-type(1) .form-register__option {
 	//register form end
 }
 @media(min-width:@desktop-screen) {
-	
 	body {
 		background:@bg-darkgrey no-repeat 50% 0;
 		background-size:cover;
@@ -1090,6 +1268,18 @@ fieldset:nth-of-type(1) .form-register__option {
 		flex-grow:0;
 		& a {
 			padding:24px 31px;
+			&:hover {
+				background-color: #ffffff;
+				color: #000000;
+			}
+			&:active {
+				background-color: #ffffff;
+				color: #000000;
+				& span {
+					color: #000000;
+					opacity: 0.3;
+				}
+			}
 		}
 	}
 	.user-form {
@@ -1101,9 +1291,26 @@ fieldset:nth-of-type(1) .form-register__option {
 		text-decoration:none;
 		padding:24.5px;
 		text-transform:uppercase;
+		&:hover {
+			background-color: #ffffff;
+			color: #000000;
+			& .login-form__icon > .cls-1 {
+				fill: black;
+			}
+		}
+		&:active {
+			background-color: #ffffff;
+			color: #000000;
+			& span {
+				opacity: 0.3;
+			}
+			& .login-form__icon > .cls-1{
+				opacity: 0.2;
+			}
+		}
 	}
 	.login-form__icon {
-		top:3px;
+		top:1px;
 		padding-right:19px;
 	}
 	.main-header__logo {
@@ -1200,7 +1407,7 @@ fieldset:nth-of-type(1) .form-register__option {
 		order:0;
 		margin-top: 0;
 		margin-right: auto;
-		margin-left: 80px;
+		margin-left: 200px;
 		& span {
 			text-align: center;
 			display: block;
@@ -1208,7 +1415,7 @@ fieldset:nth-of-type(1) .form-register__option {
 		}
 	}
 	.social__icon {
-		width:162px;
+		width: 192px;
 		min-height:51px;
 		border:none;
 		align-self:flex-end;
@@ -1220,19 +1427,14 @@ fieldset:nth-of-type(1) .form-register__option {
 			margin: 0 6px;
 		}
 	}
-	.social__icon li {
-		& a {
-			border:1px solid #2e2e2e; 
-		}
-		&:nth-of-type(1) a{
-			padding: 16px 18px 17px 17px;
-		}
-		&:nth-of-type(2) a{
-			padding: 15px 20px 14px 20px;
-		}		
-		&:nth-of-type(3) a{
-			padding: 15px 15px 16px 16px;
-		}
+	.vkontakte{
+		padding: 16px 17.5px;
+	}
+	.facebook {
+		padding: 14px 20px;
+	}
+	.instagram {
+		padding: 15px;
 	}
 	.social__icon li {
 		&:nth-of-type(1) img {
@@ -1240,7 +1442,7 @@ fieldset:nth-of-type(1) .form-register__option {
 		}
 		&:nth-of-type(2) img {
 			max-width:10px;
-		}	
+		}
 		&:nth-of-type(3) img {
 			max-width:19px;
 		}
@@ -1249,5 +1451,35 @@ fieldset:nth-of-type(1) .form-register__option {
 		padding-left:45px;
 		padding-right:41px;
 	}
+    //register form
+	.register {
+		padding: 63px 100px 73px;
+	}
+	.register__item:nth-of-type(2) {
+		padding: 0 37px 35px 38px;
+	}
+	.form-register fieldset:nth-of-type(2) ul {
+    	max-height: 120px;
+		align-content: space-between;
+		margin: 0 0 65px;
+  }
+	.form-register__wrapper {
+		justify-content: space-between;
+	}
+  .register__item:nth-of-type(1), .register__item:nth-of-type(2), .register__item:nth-of-type(3) {
+    width: 30.23%;
+  }
+	.form-register__option{
+		font-size: 24px;
+	}
+  .register button {
+    padding: 26px 332px 27px 389px;
+	  width: 100%;
+	  font-size: 24px;
+	  cursor: pointer;
+  }
+  //.form-register fieldset:nth-of-type(1) ul{
+  //  justify-content: space-evenly;
+  //}
 }
 
