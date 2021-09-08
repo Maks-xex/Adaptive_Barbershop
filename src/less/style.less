@@ -61,7 +61,14 @@ img {
 	font-size:0;
 	height:0;
 }
-
+ul {
+	list-style-type:none;
+	margin:0;
+	padding:0;
+}
+input, textarea {
+  font-size:18px;
+}
 /* Файл scaffolding.less end*/
 
 /* Файл mixins.less */
@@ -73,9 +80,109 @@ img {
     display: none;
   }
 }
-/* Файл mixins.less end*/
-
-/* Файл main-header*/
+/* mixins less end*/
+.modal-login-form__wrapper {
+	display: none;
+}
+.modal-show {
+	display: block;
+}
+@keyframes error {
+	0%, 100% 				{transform: translateX(0);		}
+	10%, 30%, 50%, 70%, 90% {transform: translateX(-10px);	}
+	20%, 40%, 60%, 80% 		{transform:	translateX(10px);	}
+}
+.modal-error {
+	animation-name: error;
+	animation-duration: 0.6s;
+}
+@keyframes fallout {
+	0%{top: -20%;}
+	100% {top: (136px);}
+}
+.modal-fallout{
+	animation-name:fallout;
+	animation-duration:0.4s;
+	animation-timing-function:ease;
+}
+.modal-login__form {
+	background-color: #f8f5f2;
+	color: #000000;
+	text-align: center;
+	padding: 31px 20px 37px;
+	box-shadow: 0 33px 18px 2px black;
+	& h3 {
+		text-transform: uppercase;
+		padding-bottom: 20px;
+	}
+	& p {
+		padding-bottom: 25px;
+	}
+}
+.login-form__item {
+	padding-bottom: 6px;
+	margin: 0 auto;
+	& ::placeholder {
+		font-size: 18px;
+	}
+	& input {
+		border: none;
+		padding: 17px 0 20px 9px;
+		width: 100%;
+	}
+	& label {
+		background-color: #ffffff;
+		display: flex;
+		border: 1px solid #e5ddd5;
+		& :focus-visible {
+			outline: none;
+		}
+	}
+	& img {
+		align-self: center;
+		padding-right: 14px;
+	}
+}
+.login-form__options {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	padding-bottom: 30px;
+	& label {
+		cursor: pointer;
+	}
+	& a {
+		padding-top: 18px;
+		color: #000000;
+	}
+}
+.submit-form__wrapper {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	& button {
+		padding: 10px 42px 15px;
+		background-color: #826550;
+		color: #ffffff;
+		width: 47%;
+		margin: 0;
+		&:last-of-type {
+			padding-right: 33px;
+			background-color: inherit;
+			color: inherit;
+			padding-left: 33px;
+			&:hover {
+				background-color: inherit;
+			}
+		}
+	}
+}
+.modal-login-form__wrapper {
+	position: absolute;
+	top: 136px;
+	width: 100%;
+}
+/* main-header*/
 .main-header,
 .main-header__logo {
   .no-outline();
@@ -94,11 +201,6 @@ img {
 	& img {
 		margin-top: 29px;
 	}
-}
-ul {
-	list-style-type:none;
-	margin:0;
-	padding:0;
 }
 .main-nav {
 	display:flex;
@@ -142,7 +244,6 @@ ul {
 		box-shadow: 0 8px 0 0 #ffffff, 0 16px 0 0 #ffffff;
 	}
 }
-
 .site-nav a{
 	display: block;
     padding: 12px 21px;
@@ -225,6 +326,7 @@ sup {
     padding-top: 5px;
 }
 .news-and-action .button,
+.submit-form__wrapper .button:last-of-type,
 .feedback__button,
 .hidden-on-mobile {
 	&:active {
@@ -332,7 +434,7 @@ sup {
 	text-transform: uppercase;
 }
 
-//registre-form
+.submit-form__wrapper .button,
 .form-register .button,
 .popup-success .button,
 .popup-fail .button {
@@ -346,11 +448,12 @@ sup {
 		background-color: #aeaeae;
 	}
 }
+//registre-form
 .form-register {
 	margin: 0;
 }
-.form-register__option input[type="radio"],
-.form-register__option input[type="checkbox"]{
+.option input[type="radio"],
+.option input[type="checkbox"]{
 	position: absolute;
 	z-index: -1;
 	opacity: 0;
@@ -358,7 +461,7 @@ sup {
 	width: 0;
 	height: 0;
 }
-.form-register__option label input[type="radio"]:checked + span::after {
+.option label input[type="radio"]:checked + span::after {
 	content:"";
 	position:absolute;
 	width:100%;
@@ -370,7 +473,7 @@ sup {
 	left: -1px;
 	top: -1px;
 }
-.form-register__option label input[type="radio"] + span {
+.option label input[type="radio"] + span {
 	display: inline-block;
 	position: relative;
 	user-select:none;
@@ -382,8 +485,8 @@ sup {
 	margin-bottom: 15px;
 	left:8px;
 }
-.form-register__option label input[type="checkbox"]:checked + span::before,
-.form-register__option label input[type="checkbox"]:checked + span::after {
+.option label input[type="checkbox"]:checked + span::before,
+.option label input[type="checkbox"]:checked + span::after {
 	content: "";
 		position:absolute;
 		top: 19px;
@@ -392,31 +495,31 @@ sup {
 		height: 2px;
 		background-color: #000000;
 }
-.form-register__option label:active {
+.option label:active {
 	& input[type="checkbox"] + span,& input[type="radio"] + span {
 		background-color: #d5c9bd;
 	}
 }
-.form-register__option label input[type="checkbox"]:checked + span::before {
+.option label input[type="checkbox"]:checked + span::before {
 	width: 9px;
 	left: 7px;
 	top: 23px;
 }
-.form-register__option label input[type="checkbox"] + span {
+.option label input[type="checkbox"] + span {
 	display: inline-block;
 	width: 36px;
 	height: 36px;
 	border: 1px solid #f4f0ed;
 	background-color: #ffffff;
 	position: relative;
-	margin-right: 15px;
+	margin-right: 14px;
 	top: 12px;
 	user-select:none;
 }
-.form-register__option input[type="checkbox"]:checked + span::before {
+.option input[type="checkbox"]:checked + span::before {
 	transform: rotate(45deg);
 }
-.form-register__option input[type="checkbox"]:checked + span::after {
+.option input[type="checkbox"]:checked + span::after {
 	transform: rotate(-45deg);
 }
 .popup__wrapper {
@@ -515,6 +618,41 @@ fieldset:nth-of-type(1) .form-register__option {
 //register-form end
 
 //barbershop-photo start
+.body_barbershop-photo > svg:last-of-type{
+	display: none;
+}
+.main-barbershop-photo {
+	background-color: #353535;
+	margin-bottom: -1px;
+}
+.best-work {
+	background: #826550;
+	color: #ffff;
+	font-weight: bold;
+	text-align: center;
+	padding-top: 401px;
+	text-transform: uppercase;
+	& span {
+		position: absolute;
+		width: 126px;
+		background: #826550;
+		padding: 10px 25px 4px 25px;
+		display: flex;
+		justify-content: flex-start;
+		height: 36px;
+	}
+	& span::after {
+		content: "";
+		border-left: 10px solid #826550;
+		border-right: 5px solid transparent;
+		border-bottom: 25px solid #826550;
+		border-top: 25px solid #826550;
+		position: relative;
+		display: block;
+		left: 39px;
+		top: -10px;
+	}
+}
 .our-works {
 	background-color: @bg-lightgrey;
   	color: #000000;
@@ -529,7 +667,12 @@ fieldset:nth-of-type(1) .form-register__option {
   padding: 33px 57px 33px 55px;
 }
 .our-works__item {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
   	border: 1px solid #e5ddd5;
+    width: 280px;
+    margin: 0 auto;
 	margin-bottom: 20px;
   & h4{
     padding: 24px 0 21px 0;
@@ -563,6 +706,9 @@ fieldset:nth-of-type(1) .form-register__option {
 img.last-element {
 		top: 9px;
 		left: -12px;
+}
+.important-area {
+	border: 1px solid red !important;
 }
 @media (max-width: @mobile-screen) {
   .main-nav--closed .site-nav__item {
@@ -840,6 +986,61 @@ img.last-element {
 		padding-bottom: 6px;
 	}
 	//register-form end
+
+	//barbershop-photo
+
+	.body_barbershop-photo > svg:last-of-type{
+		color: #353535;
+		display: block;
+	}
+
+	.price-current__table tr td:first-child{
+		display: none;
+	}
+	.price-current {
+		padding: 35px 20px 20px;
+		& h3{
+			text-align: center;
+			padding-bottom: 30px;
+		}
+	}
+	.price-current__table {
+		font-size: 19px;
+		margin: 0 auto;
+		& tr {
+			display: grid;
+			grid-column-gap: 20px;
+		}
+		& th {
+			grid-area: 1;
+			text-align: left;
+		}
+		& td:nth-of-type(n+1) {
+			padding-bottom: 20px;
+		}
+		& td:nth-of-type(2n)::before {
+			content: "(";
+		}
+		& td:nth-of-type(2n)::after {
+			content: ")";
+		}
+		& td:nth-of-type(odd) {
+			grid-area: 1;
+			text-align: right;
+			padding-bottom: 0;
+		}
+	}
+	.coupon {
+		border: 1px solid #494949;
+		display: flex;
+		margin: 0 auto;
+		width: 280px;
+		justify-content: space-around;
+		align-items: center;
+		& img {
+			padding: 16px 0 18px;
+		}
+	}
 }
 @media(min-width: @tablet-screen) {
 	body {
@@ -847,7 +1048,45 @@ img.last-element {
 		// background: url("../img/dest/bg-tablet.jpg");
 		background-size: 1178px auto;
 	}
-
+	.modal-login-form__wrapper {
+		position: static;
+		margin: 0 auto;
+		width: 500px;
+	}
+.modal-login__form {
+	position: absolute;
+	top: 136px;
+	width: 460px;
+	& h3 {
+		font-size: 40px;
+	}
+	& form {
+		width: 320px;
+		margin: 0 auto;
+	}
+}
+.submit-form__wrapper {
+	& button:first-of-type {
+		width: 100%;
+	}
+	& button:last-of-type {
+		position: absolute;
+		top: 0;
+		right: -250px;
+		border: none;
+		padding:0;
+		font-size: 0;
+		& span::before{
+			content: "";
+			position: absolute;
+			top: 0px;
+			left: 0px;
+			width: 30px;
+			height: 30px;
+			background-image: url("../img/dest/cross.svg");
+		}
+	}
+}
 	main svg:last-child {
 		display:none;
 	}
@@ -866,7 +1105,7 @@ img.last-element {
 			width:370px;
 		}
 	}
-	.main-header__register-logo {
+	.header__logo {
 		height: 250px;
 		background: url("../img/dest/background_register.jpg");
 		background-size: cover;
@@ -1170,9 +1409,10 @@ img.last-element {
 	}
 	//register form
 
-	.main-register svg:first-child {
+	.main-register svg:first-child,
+	.main-barbershop-photo svg:first-child {
 		position: absolute;
-		margin-top: -10.6%;
+		margin-top: -10.5%;
 	}
 	.register {
 		padding: 63px 64px 73px;
@@ -1254,11 +1494,100 @@ img.last-element {
 		background-color: #ffffff;
 	}
 	//register form end
+
+	//barbershop-photo
+
+	.our-works-title__wrapper {
+		display: flex;
+		justify-content: space-between;
+		&  a {
+			align-self: center;
+		}
+		& h3 {
+			padding-left: 0;
+		}
+	}
+	.best-work {
+		padding-top: 35px;
+	}
+	.our-works {
+		padding: 0 64px 88px;
+	}
+	.our-works__item {
+		display: flex;
+		flex-wrap: wrap;
+		width: 640px;
+	}
+	.our-works__content {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        flex: 1;
+        margin-left: 51px;
+	}
+    .our-works__category {
+        flex: 1;
+      	align-content: flex-end;
+    }
+	.price-current {
+		padding: 43px 64px 56px;
+		& h3 {
+			padding-bottom: 51px;
+			width: 640px;
+			margin: 0 auto;
+		}
+	}
+	.price-current__wrapper {
+		text-align: center;
+	}
+	.price-current__table {
+		font-size: 20px;
+		margin: 0 auto;
+		border-collapse: collapse;
+		border: 1px solid #494949;
+		& th, & td {
+		border: 1px solid #494949;
+		padding: 19px;
+		text-align: start;
+		}
+		& th, & td:last-of-type{
+			padding-right: 55px;
+		}
+		& tr td:first-child {
+			padding-right: 30.9px;
+			padding-left: 30.8px;
+		}
+	}
+	.coupon {
+		display: flex;
+		width: 640px;
+		justify-content: space-around;
+		font-size: 30px;
+		font-weight: bold;
+		align-items: center;
+		border: 1px solid #494949;
+		margin: 9px auto 0;
+		& img {
+			padding: 21px 0;
+			width: 72px;
+		}
+		& br {
+			display: none;
+		}
+	}
+	.main-barbershop-photo svg:last-of-type{
+		display: none;
+	}
+
+	//barbershop-photo end
 }
 @media(min-width:@desktop-screen) {
 	body {
 		background:@bg-darkgrey no-repeat 50% 0;
 		background-size:cover;
+	}
+	.modal-login__form {
+		position: fixed;
 	}
 	.main-nav__wrapper {
 		margin:0 120px;
@@ -1452,6 +1781,9 @@ img.last-element {
 		padding-right:41px;
 	}
     //register form
+	.header__logo {
+		height: 345px;
+	}
 	.register {
 		padding: 63px 100px 73px;
 	}
@@ -1478,8 +1810,59 @@ img.last-element {
 	  font-size: 24px;
 	  cursor: pointer;
   }
-  //.form-register fieldset:nth-of-type(1) ul{
-  //  justify-content: space-evenly;
-  //}
+  .our-works {
+	  padding: 0 120px 88px 120px;
+  }
+  .our-works-item__wrapper {
+	  display: flex;
+	  flex-direction: row;
+	  flex-wrap: wrap;
+	  place-content: space-between;
+  }
+  .our-works__item {
+	  width: 294px;
+	  margin-left: 0;
+	  margin-right: 0;
+	  &:first-child {
+		  flex: 100% 0 0;
+	  }
+	  &:last-of-type {
+		  margin-bottom: 20px;
+	  }
+  }
+  .our-works__category {
+	  width: auto;
+	  & span {
+	  	padding-bottom: 0;
+	  }
+  }
+  .our-works__content {
+	  margin-left: 22px;
+  }
+  .price-current__wrapper {
+	  display: flex;
+	  width: 960px;
+	  margin: 0 auto;
+  }
+  .price-current h3 {
+	  width: 960px;
+  }
+  .price-current__table {
+	  margin: 0;
+  }
+  .coupon {
+	  flex-wrap: wrap;
+	  flex-direction: column;
+	  width: auto;
+	  font-size: 20px;
+	  font-weight: normal;
+	  padding: 35px 62px 26px 65px;
+	  margin-top: 0;
+	  & br {
+		  display: inline-block;
+	  }
+	  & img {
+		  width: 142px;
+	  }
+  }
 }
-

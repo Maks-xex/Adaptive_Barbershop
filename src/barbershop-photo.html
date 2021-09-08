@@ -5,12 +5,12 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="format-detection" content="telephone=no">
     <!--	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">-->
-    <link href="css/style.css" rel="stylesheet">
+    <link href="css/style.min.css" rel="stylesheet">
     <title>Barbershop</title>
 </head>
-<body>
+<body class="body_barbershop-photo">
 <header class="main-header">
-    <a class="main-header__logo">
+    <a class="main-header__logo header__logo">
         <picture>
             <source media="(min-width: 1200px)" srcset="img/dest/logo-desktop.svg">
             <source media="(min-width: 768px)" srcset="img/dest/logo-tablet.svg">
@@ -55,66 +55,72 @@
 <main class="main-barbershop-photo">
     <include src="src/img/dest/back.svg"></include>
     <section class="our-works">
-        <h3 class="our-works__title">наши работы</h3>
-        <a class="button hidden-on-mobile" href="index.html"><span>На главную</span></a>
-        <article class="our-works__item">
-        <a href="#">
-            <picture>
-                <source media="(min-width:1200px)" srcset="img/dest/barbershop_photo-desktop/photo-1-desktop.jpg">
-                <source media="(min-width:768px)" srcset="img/dest/barbershop_photo-tablet/photo-1-tablet.jpg">
-                <img src="img/dest/barbershop_photo-mobile/photo-1-mobile.jpg" alt="первая работа">
-            </picture>
-        </a>
-            <div class="our-works__content">
-                <h4 >Лжепётр Мчиславский</h4>
-                <p>Где я только не стригся, но так как делаете это вы — не умеет никто другой! Еще раз спасибо и до скорого!</p>
-                <div class="our-works__category">
-                    <img width="21" height="20" src="img/dest/scissors-icon.svg">
-                    <span>Стрижка</span>
-                    <img width="23" height="21" src="img/dest/beard-icon.svg">
-                    <span>Бритье</span>
-                    <img class="last-element" width="45" height="15" src="img/dest/mustache-icon.svg">
-                    <span>Усы</span>
+        <div class="our-works-title__wrapper">
+            <h3 class="our-works__title">наши работы</h3>
+            <a class="button hidden-on-mobile" href="index.html"><span>На главную</span></a>
+        </div>
+        <div class="our-works-item__wrapper">
+            <article class="our-works__item">
+                <div class="best-work">
+                    <span>Работа Месяца</span>
                 </div>
-            </div>
-        </article>
-        <article class="our-works__item">
-        <a href="#">
-            <picture>
-                <source media="(min-width:1200px)" srcset="img/dest/barbershop_photo-desktop/photo-2-desktop.jpg">
-                <source media="(min-width:768px)" srcset="img/dest/barbershop_photo-tablet/photo-2-tablet.jpg">
-                <img src="img/dest/barbershop_photo-mobile/photo-2-mobile.jpg" alt="первая работа">
-            </picture>
-        </a>
-            <div class="our-works__content">
-                <h4 >Саша Мальцев</h4>
-                <p>Попросил омолодить и омолодили! Кто теперь скажет, что мне 45?</p>
-                <div class="our-works__category">
-                    <img width="21" height="20" src="img/dest/scissors-icon.svg">
-                    <span>Стрижка</span>
+            <a href="#">
+                <picture>
+                    <source media="(min-width:1200px)" srcset="img/dest/barbershop_photo-desktop/photo-1-desktop.jpg">
+                    <source media="(min-width:768px)" srcset="img/dest/barbershop_photo-tablet/photo-1-tablet.jpg">
+                    <img src="img/dest/barbershop_photo-mobile/photo-1-mobile.jpg" alt="первая работа">
+                </picture>
+            </a>
+                <div class="our-works__content">
+                    <h4 >Лжепётр Мчиславский</h4>
+                    <p>Где я только не стригся, но так как делаете это вы — не умеет никто другой! Еще раз спасибо и до скорого!</p>
+                    <div class="our-works__category">
+                        <img width="21" height="20" src="img/dest/scissors-icon.svg">
+                        <span>Стрижка</span>
+                        <img width="23" height="21" src="img/dest/beard-icon.svg">
+                        <span>Бритье</span>
+                        <img class="last-element" width="45" height="15" src="img/dest/mustache-icon.svg">
+                        <span>Усы</span>
+                    </div>
                 </div>
-            </div>
-        </article>
-        <article class="our-works__item">
-        <a href="#">
-            <picture>
-                <source media="(min-width:1200px)" srcset="img/dest/barbershop_photo-desktop/photo-3-desktop.jpg">
-                <source media="(min-width:768px)" srcset="img/dest/barbershop_photo-tablet/photo-3-tablet.png">
-                <img src="img/dest/barbershop_photo-mobile/photo-3-mobile.jpg" alt="первая работа">
-            </picture>
-        </a>
-            <div class="our-works__content">
-                <h4 >Владимир Иваныч</h4>
-                <p>К зимнему сезону — готов!</p>
-                <div class="our-works__category">
-                    <img width="23" height="21" src="img/dest/beard-icon.svg">
-                    <span>Бритье</span>
-                    <img class="last-element" width="45" height="15" src="img/dest/mustache-icon.svg">
-                    <span>Усы</span>
+            </article>
+            <article class="our-works__item">
+            <a href="#">
+                <picture>
+                    <source media="(min-width:1200px)" srcset="img/dest/barbershop_photo-desktop/photo-2-desktop.jpg">
+                    <source media="(min-width:768px)" srcset="img/dest/barbershop_photo-tablet/photo-2-tablet.jpg">
+                    <img src="img/dest/barbershop_photo-mobile/photo-2-mobile.jpg" alt="первая работа">
+                </picture>
+            </a>
+                <div class="our-works__content">
+                    <h4 >Саша Мальцев</h4>
+                    <p>Попросил омолодить и омолодили! Кто теперь скажет, что мне 45?</p>
+                    <div class="our-works__category">
+                        <img width="21" height="20" src="img/dest/scissors-icon.svg">
+                        <span>Стрижка</span>
+                    </div>
                 </div>
-            </div>
-        </article>
-        <article class="our-works__item">
+            </article>
+            <article class="our-works__item">
+            <a href="#">
+                <picture>
+                    <source media="(min-width:1200px)" srcset="img/dest/barbershop_photo-desktop/photo-3-desktop.jpg">
+                    <source media="(min-width:768px)" srcset="img/dest/barbershop_photo-tablet/photo-3-tablet.png">
+                    <img src="img/dest/barbershop_photo-mobile/photo-3-mobile.jpg" alt="первая работа">
+                </picture>
+            </a>
+                <div class="our-works__content">
+                    <h4 >Владимир Иваныч</h4>
+                    <p>К зимнему сезону — готов!</p>
+                    <div class="our-works__category">
+                        <img width="23" height="21" src="img/dest/beard-icon.svg">
+                        <span>Бритье</span>
+                        <img class="last-element" width="45" height="15" src="img/dest/mustache-icon.svg">
+                        <span>Усы</span>
+                    </div>
+                </div>
+            </article>
+            <article class="our-works__item">
         <a href="#">
             <picture>
                 <source media="(min-width:1200px)" srcset="img/dest/barbershop_photo-desktop/photo-4-desktop.jpg">
@@ -131,51 +137,53 @@
                 </div>
             </div>
         </article>
+        </div>
     </section>
     <include src="src/img/dest/end.svg"></include>
     <section class="price-current">
         <h3>ПРЕЙСКУРАНТ</h3>
         <div class="price-current__wrapper">
-            <table>
+            <table class="price-current__table">
                 <tr>
                     <td>1</td>
-                    <td>Классическая стрижка</td>
+                    <th colspan="">Классическая стрижка</th>
                     <td>с мытьём головы</td>
                     <td>1 500 руб.</td>
                 </tr>
                 <tr>
                     <td>2</td>
-                    <td>Современный вариант</td>
+                    <th>Современный вариант</th>
                     <td>с мытьём головы</td>
                     <td>1 500 руб.</td>
                 </tr>
                 <tr>
                     <td>3</td>
-                    <td>Индивидуальный подход</td>
+                    <th>Индивидуальный подход</th>
                     <td>с мытьём головы</td>
                     <td>2 000 руб.</td>
                 </tr>
                 <tr>
                     <td>4</td>
-                    <td>Бритьё бороды</td>
+                    <th>Бритьё бороды</th>
                     <td>без мытья</td>
                     <td>500 руб.</td>
                 </tr>
                 <tr>
                     <td>5</td>
-                    <td>Бритьё головы</td>
+                    <th>Бритьё головы</th>
                     <td>с мытьём головы</td>
                     <td>1 000 руб.</td>
                 </tr>
             </table>
             <div class="coupon">
-                <img src="img/dest/clock.svg">
+                <img width="58" height="57" src="img/dest/clock-icon.svg">
                 <p>C 10:00 до 14:00<br>
                 скидка 20%</p>
             </div>
         </div>
     </section>
 </main>
+    <include src="src/img/dest/end.svg"></include>
 <footer>
     <div class="about-us">
         <p><b>Барбершоп Бородинский</b><br>
@@ -184,17 +192,43 @@
     <div class="social">
         <span>Давайте дружить!</span>
         <ul class="social__icon">
-            <li><a href="#vk"><img src="img/dest/vk-icon.png" alt="Мы в контакте"></a></li>
-            <li><a href="#fb"><img src="img/dest/facebook-icon.png" alt="Наш фейсбук"></a></li>
-            <li><a href="#inst"><img src="img/dest/insta-icon.png" alt="Наш Инстаграм"></a></li>
+            <li><a class="vkontakte" href="#vk"><img src="img/dest/vk-icon.png" alt="Мы в контакте"></a></li>
+            <li><a class="facebook" href="#fb"><img src="img/dest/facebook-icon.png" alt="Наш фейсбук"></a></li>
+            <li><a class="instagram" href="#inst"><img src="img/dest/insta-icon.png" alt="Наш Инстаграм"></a></li>
         </ul>
     </div>
     <div class="about-me">
         <p>Разработано:</p>
-        <a href="#"><span>Maks-xex</span></a>
+        <a href="#"><span>Maks-xex</span> </a>
     </div>
 </footer>
-<script src="js/script.js"></script>
+<div class="modal-login-form__wrapper">
+    <section class="modal-login__form">
+        <h3>Личный Кабинет</h3>
+        <p>Введите свой логин и пароль, чтобы войти</p>
+        <form id="login-form" method="post" action="https://echo.htmlacademy.ru">
+            <p class="login-form__item">
+                <label><input type="text" placeholder="Логин" name="Login"><img src="img/dest/user-login.png"> </label>
+            </p>
+            <p class="login-form__item">
+                <label><input type="password" placeholder="Пароль" name="Password"><img src="img/dest/user-password.png"></label>
+            </p>
+            <p class="login-form__options option">
+                <label>
+                    <input type="checkbox">
+                    <span></span>
+                    Запомни меня
+                </label>
+                <a href="#">Я забыл пароль!</a>
+            </p>
+            <div class="submit-form__wrapper">
+                <button type="submit" class="button" form="login-form"><span>Войти</span></button>
+                <button type="button" class="button close-modal"><span>Закрыть</span></button>
+            </div>
+        </form>
+    </section>
+</div>
+<script src="js/script.min.js"></script>
 </body>
 </html>
 

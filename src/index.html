@@ -1,11 +1,11 @@
 <!DOCKTYPE html>
-<html lang="RU">
+<html lang="RU" xmlns="http://www.w3.org/1999/html">
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width,initial-scale=1">
 	<meta name="format-detection" content="telephone=no">
 <!--	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">-->
-	<link href="css/style.css" rel="stylesheet">
+	<link href="css/style.min.css" rel="stylesheet">
 	<title>Barbershop</title>
 	<!-- <link rel="preconnect" href="https://fonts.googleapis.com"> -->
 	<!-- <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> -->
@@ -39,7 +39,7 @@
 				</ul>
 				<ul class="user-form">
 					<li>
-						<a class="user-form__login" href="index.html">
+						<a class="user-form__login" href="#">
 						<svg class="login-form__icon" data-name="login" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
 							<defs>
 								<style>
@@ -187,21 +187,47 @@
 <footer>
 	<div class="about-us">
 		<p><b>Барбершоп Бородинский</b><br>
-		г. Санкт-Петербург,<br> ул. Большая Конюшенная 19/8<br><span class="only-tab-and-desk">Тел.: </span><span>+7(812) 555-66-66</span></p>
+			г. Санкт-Петербург,<br> ул. Большая Конюшенная 19/8<br><span class="only-tab-and-desk">Тел.: </span><span>+7(812) 555-66-66</span></p>
 	</div>
 	<div class="social">
 		<span>Давайте дружить!</span>
 		<ul class="social__icon">
-			<li><a href="#vk"><img src="img/dest/vk-icon.png" alt="Мы в контакте"></a></li>
-			<li><a href="#fb"><img src="img/dest/facebook-icon.png" alt="Наш фейсбук"></a></li>
-			<li><a href="#inst"><img src="img/dest/insta-icon.png" alt="Наш Инстаграм"></a></li>
+			<li><a class="vkontakte" href="#vk"><img src="img/dest/vk-icon.png" alt="Мы в контакте"></a></li>
+			<li><a class="facebook" href="#fb"><img src="img/dest/facebook-icon.png" alt="Наш фейсбук"></a></li>
+			<li><a class="instagram" href="#inst"><img src="img/dest/insta-icon.png" alt="Наш Инстаграм"></a></li>
 		</ul>
 	</div>
 	<div class="about-me">
 		<p>Разработано:</p>
-		<a href="#"><span>Maks-xex</span></a>
+		<a href="#"><span>Maks-xex</span> </a>
 	</div>
 </footer>
-<script src="js/script.js"></script>
-</body> 
+<div class="modal-login-form__wrapper">
+	<section class="modal-login__form">
+		<h3>Личный Кабинет</h3>
+		<p>Введите свой логин и пароль, чтобы войти</p>
+		<form id="login-form" method="post" action="https://echo.htmlacademy.ru">
+			<p class="login-form__item">
+				<label><input type="text" placeholder="Логин" name="Login"><img src="img/dest/user-login.png"> </label>
+			</p>
+			<p class="login-form__item">
+				<label><input type="password" placeholder="Пароль" name="Password"><img src="img/dest/user-password.png"></label>
+			</p>
+			<p class="login-form__options option">
+				<label>
+					<input type="checkbox">
+					<span></span>
+					Запомни меня
+				</label>
+				<a href="#">Я забыл пароль!</a>
+			</p>
+			<div class="submit-form__wrapper">
+				<button type="submit" class="button" form="login-form"><span>Войти</span></button>
+				<button type="button" class="button close-modal"><span>Закрыть</span></button>
+			</div>
+		</form>
+	</section>
+</div>
+<script src="js/script.min.js"></script>
+</body>
 </html>

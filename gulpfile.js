@@ -59,7 +59,7 @@ let svgmin = require("gulp-svgmin")
 		 .pipe(uglify()) // Сжимаем JavaScript
 		 .pipe(rename("script.min.js"))
 		 .pipe(dest('src/js')) // Выгружаем готовый файл в папку назначения
-		 .pipe(dest('build/js')) // Выгружаем готовый файл в папку назначения
+		 //.pipe(dest('build/js')) // Выгружаем готовый файл в папку назначения
 		 .pipe(browserSync.stream()) // Триггерим Browsersync для обновления страницы
  });
 
@@ -82,15 +82,14 @@ gulp.task("style", function() {
 	.pipe(browserSync.stream()) // Сделаем инъекцию в браузер
 	.pipe(minify())
 	.pipe(rename("style.min.css"))
-	.pipe(dest("build/css"));
-	
+	.pipe(dest("src/css"));
 });
 gulp.task('images', function() {
 	return src('src/img/src/**/*') // Берем все изображения из папки источника
 	.pipe(newer('src/img/dest')) // Проверяем, было ли изменено (сжато) изображение ранее
 	.pipe(imagemin()) // Сжимаем и оптимизируем изображеня
 	.pipe(dest('src/img/dest')) // Выгружаем оптимизированные изображения в папку назначения
-	.pipe(dest('build/img/dest')) // Выгружаем оптимизированные изображения в папку назначения
+	//.pipe(dest('build/img/dest')) // Выгружаем оптимизированные изображения в папку назначения
 });
 gulp.task("imgcl", series("images"), function() {
 	return del('src/img/dest/**/*', { force: true }) // Удаляем все содержимое папки "src/images/dest/"
@@ -110,13 +109,7 @@ gulp.task("sprite", function() {
 		}))
 		.pipe(rename("sprite.svg"))
 		.pipe(dest("src/img/dest"))
-		.pipe(dest("build/img/dest"))
-});
-gulp.task('svgmin', function() {
-	return src("src/img/src/*.svg")
-	.pipe(svgmin())
-	.pipe(dest("src/img/dest"))
-	.pipe(dest("build/img/dest"))
+		//.pipe(dest("build/img/dest"))
 });
 	
 gulp.task("clean", function () {
@@ -138,11 +131,12 @@ gulp.task ("copy", function() {
  
 gulp.task("build", function(done) {
 	run("clean", 
-		"copy", 
+		"images",
 		"style",
 		"scripts",
 		"sprite",
 		"html", 
+		"copy", 
 		function() {
 		console.log('done');
 		done();

@@ -60,10 +60,207 @@ img {
 .v-hidden::before {
   display: none;
 }
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+input,
+textarea {
+  font-size: 18px;
+}
 /* Файл scaffolding.less end*/
 /* Файл mixins.less */
-/* Файл mixins.less end*/
-/* Файл main-header*/
+/* mixins less end*/
+.modal-login-form__wrapper {
+  display: none;
+}
+.modal-show {
+  display: block;
+}
+@-webkit-keyframes error {
+  0%,
+  100% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    -webkit-transform: translateX(-10px);
+            transform: translateX(-10px);
+  }
+  20%,
+  40%,
+  60%,
+  80% {
+    -webkit-transform: translateX(10px);
+            transform: translateX(10px);
+  }
+}
+@keyframes error {
+  0%,
+  100% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    -webkit-transform: translateX(-10px);
+            transform: translateX(-10px);
+  }
+  20%,
+  40%,
+  60%,
+  80% {
+    -webkit-transform: translateX(10px);
+            transform: translateX(10px);
+  }
+}
+.modal-error {
+  -webkit-animation-name: error;
+          animation-name: error;
+  -webkit-animation-duration: 0.6s;
+          animation-duration: 0.6s;
+}
+@-webkit-keyframes fallout {
+  0% {
+    top: -20%;
+  }
+  100% {
+    top: 136px;
+  }
+}
+@keyframes fallout {
+  0% {
+    top: -20%;
+  }
+  100% {
+    top: 136px;
+  }
+}
+.modal-fallout {
+  -webkit-animation-name: fallout;
+          animation-name: fallout;
+  -webkit-animation-duration: 0.4s;
+          animation-duration: 0.4s;
+  -webkit-animation-timing-function: ease;
+          animation-timing-function: ease;
+}
+.modal-login__form {
+  background-color: #f8f5f2;
+  color: #000000;
+  text-align: center;
+  padding: 31px 20px 37px;
+  -webkit-box-shadow: 0 33px 18px 2px black;
+          box-shadow: 0 33px 18px 2px black;
+}
+.modal-login__form h3 {
+  text-transform: uppercase;
+  padding-bottom: 20px;
+}
+.modal-login__form p {
+  padding-bottom: 25px;
+}
+.login-form__item {
+  padding-bottom: 6px;
+  margin: 0 auto;
+}
+.login-form__item ::-webkit-input-placeholder {
+  font-size: 18px;
+}
+.login-form__item ::-moz-placeholder {
+  font-size: 18px;
+}
+.login-form__item :-ms-input-placeholder {
+  font-size: 18px;
+}
+.login-form__item ::-ms-input-placeholder {
+  font-size: 18px;
+}
+.login-form__item ::placeholder {
+  font-size: 18px;
+}
+.login-form__item input {
+  border: none;
+  padding: 17px 0 20px 9px;
+  width: 100%;
+}
+.login-form__item label {
+  background-color: #ffffff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border: 1px solid #e5ddd5;
+}
+.login-form__item label :focus-visible {
+  outline: none;
+}
+.login-form__item img {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  padding-right: 14px;
+}
+.login-form__options {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding-bottom: 30px;
+}
+.login-form__options label {
+  cursor: pointer;
+}
+.login-form__options a {
+  padding-top: 18px;
+  color: #000000;
+}
+.submit-form__wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.submit-form__wrapper button {
+  padding: 10px 42px 15px;
+  background-color: #826550;
+  color: #ffffff;
+  width: 47%;
+  margin: 0;
+}
+.submit-form__wrapper button:last-of-type {
+  padding-right: 33px;
+  background-color: inherit;
+  color: inherit;
+  padding-left: 33px;
+}
+.submit-form__wrapper button:last-of-type:hover {
+  background-color: inherit;
+}
+.modal-login-form__wrapper {
+  position: absolute;
+  top: 136px;
+  width: 100%;
+}
+/* main-header*/
 .main-header,
 .main-header__logo {
   outline: none;
@@ -92,11 +289,6 @@ img {
 }
 .main-header__logo img {
   margin-top: 29px;
-}
-ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
 }
 .main-nav {
   display: -webkit-box;
@@ -230,11 +422,13 @@ sup {
   padding-top: 5px;
 }
 .news-and-action .button:active,
+.submit-form__wrapper .button:last-of-type:active,
 .feedback__button:active,
 .hidden-on-mobile:active {
   background-color: #d5c9bd;
 }
 .news-and-action .button:active > span,
+.submit-form__wrapper .button:last-of-type:active > span,
 .feedback__button:active > span,
 .hidden-on-mobile:active > span {
   opacity: 0.3;
@@ -344,16 +538,19 @@ sup {
 .register h2 {
   text-transform: uppercase;
 }
+.submit-form__wrapper .button:hover,
 .form-register .button:hover,
 .popup-success .button:hover,
 .popup-fail .button:hover {
   background-color: #6a4d38;
 }
+.submit-form__wrapper .button:active span,
 .form-register .button:active span,
 .popup-success .button:active span,
 .popup-fail .button:active span {
   opacity: 0.3;
 }
+.submit-form__wrapper .button:disabled,
 .form-register .button:disabled,
 .popup-success .button:disabled,
 .popup-fail .button:disabled {
@@ -362,8 +559,8 @@ sup {
 .form-register {
   margin: 0;
 }
-.form-register__option input[type="radio"],
-.form-register__option input[type="checkbox"] {
+.option input[type="radio"],
+.option input[type="checkbox"] {
   position: absolute;
   z-index: -1;
   opacity: 0;
@@ -371,7 +568,7 @@ sup {
   width: 0;
   height: 0;
 }
-.form-register__option label input[type="radio"]:checked + span::after {
+.option label input[type="radio"]:checked + span::after {
   content: "";
   position: absolute;
   width: 100%;
@@ -385,7 +582,7 @@ sup {
   left: -1px;
   top: -1px;
 }
-.form-register__option label input[type="radio"] + span {
+.option label input[type="radio"] + span {
   display: inline-block;
   position: relative;
   -webkit-user-select: none;
@@ -400,8 +597,8 @@ sup {
   margin-bottom: 15px;
   left: 8px;
 }
-.form-register__option label input[type="checkbox"]:checked + span::before,
-.form-register__option label input[type="checkbox"]:checked + span::after {
+.option label input[type="checkbox"]:checked + span::before,
+.option label input[type="checkbox"]:checked + span::after {
   content: "";
   position: absolute;
   top: 19px;
@@ -410,35 +607,35 @@ sup {
   height: 2px;
   background-color: #000000;
 }
-.form-register__option label:active input[type="checkbox"] + span,
-.form-register__option label:active input[type="radio"] + span {
+.option label:active input[type="checkbox"] + span,
+.option label:active input[type="radio"] + span {
   background-color: #d5c9bd;
 }
-.form-register__option label input[type="checkbox"]:checked + span::before {
+.option label input[type="checkbox"]:checked + span::before {
   width: 9px;
   left: 7px;
   top: 23px;
 }
-.form-register__option label input[type="checkbox"] + span {
+.option label input[type="checkbox"] + span {
   display: inline-block;
   width: 36px;
   height: 36px;
   border: 1px solid #f4f0ed;
   background-color: #ffffff;
   position: relative;
-  margin-right: 15px;
+  margin-right: 14px;
   top: 12px;
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
 }
-.form-register__option input[type="checkbox"]:checked + span::before {
+.option input[type="checkbox"]:checked + span::before {
   -webkit-transform: rotate(45deg);
       -ms-transform: rotate(45deg);
           transform: rotate(45deg);
 }
-.form-register__option input[type="checkbox"]:checked + span::after {
+.option input[type="checkbox"]:checked + span::after {
   -webkit-transform: rotate(-45deg);
       -ms-transform: rotate(-45deg);
           transform: rotate(-45deg);
@@ -579,6 +776,45 @@ fieldset:nth-of-type(1) .form-register__option label img {
   border: none;
   margin: 0 auto;
 }
+.body_barbershop-photo > svg:last-of-type {
+  display: none;
+}
+.main-barbershop-photo {
+  background-color: #353535;
+  margin-bottom: -1px;
+}
+.best-work {
+  background: #826550;
+  color: #ffff;
+  font-weight: bold;
+  text-align: center;
+  padding-top: 401px;
+  text-transform: uppercase;
+}
+.best-work span {
+  position: absolute;
+  width: 126px;
+  background: #826550;
+  padding: 10px 25px 4px 25px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  height: 36px;
+}
+.best-work span::after {
+  content: "";
+  border-left: 10px solid #826550;
+  border-right: 5px solid transparent;
+  border-bottom: 25px solid #826550;
+  border-top: 25px solid #826550;
+  position: relative;
+  display: block;
+  left: 39px;
+  top: -10px;
+}
 .our-works {
   background-color: #f8f5f2;
   color: #000000;
@@ -593,7 +829,18 @@ fieldset:nth-of-type(1) .form-register__option label img {
   padding: 33px 57px 33px 55px;
 }
 .our-works__item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   border: 1px solid #e5ddd5;
+  width: 280px;
+  margin: 0 auto;
   margin-bottom: 20px;
 }
 .our-works__item h4 {
@@ -632,6 +879,9 @@ fieldset:nth-of-type(1) .form-register__option label img {
 img.last-element {
   top: 9px;
   left: -12px;
+}
+.important-area {
+  border: 1px solid red !important;
 }
 @media (max-width: 767px) {
   .main-nav--closed .site-nav__item {
@@ -914,11 +1164,107 @@ img.last-element {
     padding-top: 7px;
     padding-bottom: 6px;
   }
+  .body_barbershop-photo > svg:last-of-type {
+    color: #353535;
+    display: block;
+  }
+  .price-current__table tr td:first-child {
+    display: none;
+  }
+  .price-current {
+    padding: 35px 20px 20px;
+  }
+  .price-current h3 {
+    text-align: center;
+    padding-bottom: 30px;
+  }
+  .price-current__table {
+    font-size: 19px;
+    margin: 0 auto;
+  }
+  .price-current__table tr {
+    display: -ms-grid;
+    display: grid;
+    grid-column-gap: 20px;
+  }
+  .price-current__table th {
+    -ms-grid-row: 1;
+    grid-area: 1;
+    text-align: left;
+  }
+  .price-current__table td:nth-of-type(n+1) {
+    padding-bottom: 20px;
+  }
+  .price-current__table td:nth-of-type(2n)::before {
+    content: "(";
+  }
+  .price-current__table td:nth-of-type(2n)::after {
+    content: ")";
+  }
+  .price-current__table td:nth-of-type(odd) {
+    -ms-grid-row: 1;
+    grid-area: 1;
+    text-align: right;
+    padding-bottom: 0;
+  }
+  .coupon {
+    border: 1px solid #494949;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin: 0 auto;
+    width: 280px;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .coupon img {
+    padding: 16px 0 18px;
+  }
 }
 @media (min-width: 768px) {
   body {
     background: #292929 no-repeat 50% 0;
     background-size: 1178px auto;
+  }
+  .modal-login-form__wrapper {
+    position: static;
+    margin: 0 auto;
+    width: 500px;
+  }
+  .modal-login__form {
+    position: absolute;
+    top: 136px;
+    width: 460px;
+  }
+  .modal-login__form h3 {
+    font-size: 40px;
+  }
+  .modal-login__form form {
+    width: 320px;
+    margin: 0 auto;
+  }
+  .submit-form__wrapper button:first-of-type {
+    width: 100%;
+  }
+  .submit-form__wrapper button:last-of-type {
+    position: absolute;
+    top: 0;
+    right: -250px;
+    border: none;
+    padding: 0;
+    font-size: 0;
+  }
+  .submit-form__wrapper button:last-of-type span::before {
+    content: "";
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 30px;
+    height: 30px;
+    background-image: url("../img/dest/cross.svg");
   }
   main svg:last-child {
     display: none;
@@ -940,7 +1286,7 @@ img.last-element {
   .main-header__logo img {
     width: 370px;
   }
-  .main-header__register-logo {
+  .header__logo {
     height: 250px;
     background: url("../img/dest/background_register.jpg");
     background-size: cover;
@@ -1293,9 +1639,10 @@ img.last-element {
   .about-me p {
     margin: 0 auto 15px;
   }
-  .main-register svg:first-child {
+  .main-register svg:first-child,
+  .main-barbershop-photo svg:first-child {
     position: absolute;
-    margin-top: -10.6%;
+    margin-top: -10.5%;
   }
   .register {
     padding: 63px 64px 73px;
@@ -1394,6 +1741,114 @@ img.last-element {
   .form-register__option label input[type="radio"] + span {
     background-color: #ffffff;
   }
+  .our-works-title__wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .our-works-title__wrapper a {
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+  }
+  .our-works-title__wrapper h3 {
+    padding-left: 0;
+  }
+  .best-work {
+    padding-top: 35px;
+  }
+  .our-works {
+    padding: 0 64px 88px;
+  }
+  .our-works__item {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    width: 640px;
+  }
+  .our-works__content {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+    margin-left: 51px;
+  }
+  .our-works__category {
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+    -ms-flex-line-pack: end;
+        align-content: flex-end;
+  }
+  .price-current {
+    padding: 43px 64px 56px;
+  }
+  .price-current h3 {
+    padding-bottom: 51px;
+    width: 640px;
+    margin: 0 auto;
+  }
+  .price-current__wrapper {
+    text-align: center;
+  }
+  .price-current__table {
+    font-size: 20px;
+    margin: 0 auto;
+    border-collapse: collapse;
+    border: 1px solid #494949;
+  }
+  .price-current__table th,
+  .price-current__table td {
+    border: 1px solid #494949;
+    padding: 19px;
+    text-align: start;
+  }
+  .price-current__table th,
+  .price-current__table td:last-of-type {
+    padding-right: 55px;
+  }
+  .price-current__table tr td:first-child {
+    padding-right: 30.9px;
+    padding-left: 30.8px;
+  }
+  .coupon {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 640px;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    font-size: 30px;
+    font-weight: bold;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    border: 1px solid #494949;
+    margin: 9px auto 0;
+  }
+  .coupon img {
+    padding: 21px 0;
+    width: 72px;
+  }
+  .coupon br {
+    display: none;
+  }
+  .main-barbershop-photo svg:last-of-type {
+    display: none;
+  }
 }
 @media (min-width: 768px) and (max-width: 1199px) {
   .news-and-action__article:not(:first-of-type):not(:nth-of-type(2)) {
@@ -1418,6 +1873,9 @@ img.last-element {
   body {
     background: #292929 no-repeat 50% 0;
     background-size: cover;
+  }
+  .modal-login__form {
+    position: fixed;
   }
   .main-nav__wrapper {
     margin: 0 120px;
@@ -1632,6 +2090,9 @@ img.last-element {
     padding-left: 45px;
     padding-right: 41px;
   }
+  .header__logo {
+    height: 345px;
+  }
   .register {
     padding: 63px 100px 73px;
   }
@@ -1662,5 +2123,74 @@ img.last-element {
     width: 100%;
     font-size: 24px;
     cursor: pointer;
+  }
+  .our-works {
+    padding: 0 120px 88px 120px;
+  }
+  .our-works-item__wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    place-content: space-between;
+  }
+  .our-works__item {
+    width: 294px;
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .our-works__item:first-child {
+    -webkit-box-flex: 100%;
+        -ms-flex: 100% 0 0px;
+            flex: 100% 0 0;
+  }
+  .our-works__item:last-of-type {
+    margin-bottom: 20px;
+  }
+  .our-works__category {
+    width: auto;
+  }
+  .our-works__category span {
+    padding-bottom: 0;
+  }
+  .our-works__content {
+    margin-left: 22px;
+  }
+  .price-current__wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 960px;
+    margin: 0 auto;
+  }
+  .price-current h3 {
+    width: 960px;
+  }
+  .price-current__table {
+    margin: 0;
+  }
+  .coupon {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    width: auto;
+    font-size: 20px;
+    font-weight: normal;
+    padding: 35px 62px 26px 65px;
+    margin-top: 0;
+  }
+  .coupon br {
+    display: inline-block;
+  }
+  .coupon img {
+    width: 142px;
   }
 }

@@ -1,11 +1,11 @@
-
+<!DOCKTYPE html>
 <html lang="RU">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="format-detection" content="telephone=no">
     <!--	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">-->
-    <link href="css/style.css" rel="stylesheet">
+    <link href="css/style.min.css" rel="stylesheet">
     <title>Barbershop</title>
     <!-- <link rel="preconnect" href="https://fonts.googleapis.com"> -->
     <!-- <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> -->
@@ -13,7 +13,7 @@
 </head>
 <body>
 <header class="main-header">
-    <a class="main-header__logo main-header__register-logo">
+    <a class="main-header__logo header__logo">
         <picture>
             <source media="(min-width: 1200px)" srcset="img/dest/logo-desktop.svg">
             <source media="(min-width: 768px)" srcset="img/dest/logo-tablet.svg">
@@ -22,7 +22,7 @@
     </a>
     <nav class="main-nav main-nav--closed">
         <button class="main-nav__toggle" type="button"><span class="v-hidden">Открыть меню</span></button>
-        <div class="main-nav__wrapper">
+        <div class="main-nav__wrapper" >
             <ul class="site-nav">
                 <li class="site-nav__item">
                     <a href="index.html"><span>Главная</span></a>
@@ -46,8 +46,8 @@
                                 .cls-1{fill:#fff;}
                             </style>
                             </defs>
-                            <polygon class="cls-1" points="0 7 7.01 7 7.01 4.06 10.96 8.01 7.01 11.91 7.01 9.06 0 9.02 0 7"></polygon>
-                            <polygon class="cls-1" points="7.01 0 7.01 2 14.03 2 14.03 13.99 7.01 13.99 7.01 16 16 16 16 0 7.01 0"></polygon>
+                            <polygon class="cls-1" points="0 7 7.01 7 7.01 4.06 10.96 8.01 7.01 11.91 7.01 9.06 0 9.02 0 7"/>
+                            <polygon class="cls-1" points="7.01 0 7.01 2 14.03 2 14.03 13.99 7.01 13.99 7.01 16 16 16 16 0 7.01 0"/>
                         </svg><span>Войти</span></a>
                 </li>
             </ul>
@@ -55,7 +55,7 @@
     </nav>
 </header>
 <main class="main-register">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 34.07"><path d="M320 34.07H160L320 0v34.07zm-320 0h160L0 0v34.07z" fill="#f8f5f2"></path></svg>
+    <include src="src/img/dest/back.svg"></include>
     <section class="register">
         <div class="register__wrapper">
         <h2>Записаться на стрижку</h2>
@@ -73,31 +73,31 @@
             <fieldset>
                 <legend>Выберите модель бороды:</legend>
                 <ul>
-                    <li class="form-register__option">
+                    <li class="form-register__option option">
                         <label>
                             <input type="radio" name="breadstyle"><span></span>адмирал
                             <img width="52px" height="98px" src="img/dest/bread_admiral.svg" alt="bread_admiral.icon">
                         </label>
                     </li>
-                    <li class="form-register__option">
+                    <li class="form-register__option option">
                         <label>
                             <input type="radio" name="breadstyle"><span></span>лесоруб
                             <img width="58px" height="98px" src="img/dest/bread_lumberjack.svg" alt="bread_lumberjack.icon">
                         </label>
                     </li>
-                    <li class="form-register__option">
+                    <li class="form-register__option option">
                         <label>
                             <input type="radio" name="breadstyle"><span></span>полярник
                             <img width="64px" height="98px" src="img/dest/bread_explorer.svg" alt="bread_explorer.icon">
                         </label>
                     </li>
-                    <li class="form-register__option">
+                    <li class="form-register__option option">
                         <label>
                             <input type="radio" name="breadstyle" value="Boyar"><span></span>боярин
                             <img width="58px" height="98px" src="img/dest/bread_boyar.svg" alt="bread_boyar.icon">
                         </label>
                     </li>
-                    <li class="form-register__option">
+                    <li class="form-register__option option">
                         <label>
                             <input type="radio" name="breadstyle"><span></span>мудрец<img width="46px" height="98px" src="img/dest/bread_sage.svg" alt="bread_sage.icon">
                         </label>
@@ -107,22 +107,22 @@
             <fieldset>
                 <legend>Допольнительные услуги:</legend>
                 <ul>
-                    <li class="form-register__option">
+                    <li class="form-register__option option">
                         <label><input type="checkbox" name="paintbread"><span></span>Подкрасить бороду</label>
                     </li>
-                    <li class="form-register__option">
+                    <li class="form-register__option option option">
                         <label><input type="checkbox" name="curlmustache"><span></span>Накрутить усы</label>
                     </li>
-                    <li class="form-register__option">
+                    <li class="form-register__option option">
                         <label><input type="checkbox" name="combbread"><span></span>Причесать бороду</label>
                     </li>
-                    <li class="form-register__option">
+                    <li class="form-register__option option">
                         <label><input type="checkbox" name="trimtemples"><span></span>Подровнять виски</label>
                     </li>
-                    <li class="form-register__option">
+                    <li class="form-register__option option">
                         <label><input type="checkbox" name="removegrayhair"><span></span>Убрать седину</label>
                     </li>
-                    <li class="form-register__option">
+                    <li class="form-register__option option">
                         <label><input type="checkbox" name="baldspot"><span></span>Отполировать лысину</label>
                     </li>
                 </ul>
@@ -130,7 +130,7 @@
             <button class="button" type="submit" form="register-form"><span>Отправить заявку</span></button>
         </form>
     </section>
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 34.07"><path fill="#f8f5f2" d="M0 0h320L160 34z"></path></svg>
+    <include src="src/img/dest/end.svg"></include>
 </main>
 <footer>
     <div class="about-us">
@@ -162,6 +162,32 @@
         <button class="button modal-fail--close" type="submit" form="register-form"><span>ок</span> </button>
     </section>
 </div>
-<script src="js/script.js"></script>
+<div class="modal-login-form__wrapper">
+    <section class="modal-login__form">
+        <h3>Личный Кабинет</h3>
+        <p>Введите свой логин и пароль, чтобы войти</p>
+        <form id="login-form" method="post" action="https://echo.htmlacademy.ru">
+            <p class="login-form__item">
+                <label><input type="text" placeholder="Логин" name="Login"><img src="img/dest/user-login.png"> </label>
+            </p>
+            <p class="login-form__item">
+                <label><input type="password" placeholder="Пароль" name="Password"><img src="img/dest/user-password.png"></label>
+            </p>
+            <p class="login-form__options option">
+                <label>
+                    <input type="checkbox">
+                    <span></span>
+                    Запомни меня
+                </label>
+                <a href="#">Я забыл пароль!</a>
+            </p>
+            <div class="submit-form__wrapper">
+                <button type="submit" class="button" form="login-form"><span>Войти</span></button>
+                <button type="button" class="button close-modal"><span>Закрыть</span></button>
+            </div>
+        </form>
+    </section>
+</div>
+<script src="js/script.min.js"></script>
 </body>
 </html>
