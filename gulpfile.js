@@ -134,9 +134,9 @@ gulp.task("build", function(done) {
 		"images",
 		"style",
 		"scripts",
-		"sprite",
-		"html", 
-		"copy", 
+		"sprite", 
+		"copy",
+	    	"html",
 		function() {
 		console.log('done');
 		done();
