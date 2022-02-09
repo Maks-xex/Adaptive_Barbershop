@@ -1,4 +1,4 @@
 My first adaptive site "Barbershop"
 
-1.Run install /n
-2.Run start
+1.run install
+2.run start
