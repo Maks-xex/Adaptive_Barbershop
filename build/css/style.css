@@ -42,6 +42,9 @@ body {
   font-family: "PT Sans Narrow", "Arial", sans-serif;
   color: #f7f4f1;
   font-style: normal;
+  overflow-x: hidden;
+  -ms-touch-action: pan-y;
+      touch-action: pan-y;
 }
 img {
   max-width: 100%;
@@ -507,13 +510,13 @@ sup {
   opacity: 0.3;
 }
 .vkontakte {
-  padding: 36px 40px;
+  padding: 33px 40px;
 }
 .facebook {
-  padding: 30px 42px;
+  padding: 26px 42px;
 }
 .instagram {
-  padding: 31px 33px;
+  padding: 28px 33px;
 }
 .button {
   text-transform: uppercase;
@@ -1034,6 +1037,28 @@ img.last-element {
     margin: 0 auto;
     width: 76%;
   }
+  .benefits__items {
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    -webkit-transform: translate(0);
+        -ms-transform: translate(0);
+            transform: translate(0);
+    -webkit-transition: -webkit-transform 0.3s ease-out;
+    transition: -webkit-transform 0.3s ease-out;
+    -o-transition: transform 0.3s ease-out;
+    transition: transform 0.3s ease-out;
+    transition: transform 0.3s ease-out, -webkit-transform 0.3s ease-out;
+  }
+  .benefits__items li {
+    width: 100vw;
+  }
+  .benefits__items img {
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+  }
   .rect {
     stroke: white;
     stroke-width: 1px;
@@ -1059,12 +1084,10 @@ img.last-element {
     text-align: center;
   }
   .benefits__cool {
-    display: none;
     text-align: center;
   }
   .benefits__rich {
     text-align: center;
-    display: none;
   }
   .news-and-action {
     padding-top: 37px;
@@ -1102,13 +1125,13 @@ img.last-element {
     border: 1px solid #2e2e2e;
   }
   .vkontakte {
-    padding: 36px 40px;
+    padding: 33px 40px;
   }
   .facebook {
-    padding: 30px 42px;
+    padding: 26px 42px;
   }
   .instagram {
-    padding: 31px 33px;
+    padding: 28px 33px;
   }
   .about-us {
     text-align: center;
@@ -1505,6 +1528,7 @@ img.last-element {
         -ms-flex-pack: justify;
             justify-content: space-between;
     padding: 46px 64px;
+    margin-top: -8px;
   }
   .news-and-action h2 {
     font-size: 40px;
@@ -1625,13 +1649,13 @@ img.last-element {
     margin-bottom: 59px;
   }
   .vkontakte {
-    padding: 36px 94px;
+    padding: 33px 94px;
   }
   .facebook {
-    padding: 30px 97px;
+    padding: 26px 94px;
   }
   .instagram {
-    padding: 31px 88px;
+    padding: 28px 88px;
   }
   .about-me a {
     margin: 0;
@@ -2068,14 +2092,18 @@ img.last-element {
     display: flex;
     margin: 0 6px;
   }
+  .social__icon li img {
+    position: relative;
+    top: 3px;
+  }
   .vkontakte {
-    padding: 16px 17.5px;
+    padding: 11px 17.5px;
   }
   .facebook {
-    padding: 14px 20px;
+    padding: 11px 20px;
   }
   .instagram {
-    padding: 15px;
+    padding: 11px 15px;
   }
   .social__icon li:nth-of-type(1) img {
     max-width: 15px;

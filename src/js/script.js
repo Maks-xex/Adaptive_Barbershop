@@ -70,25 +70,26 @@ navToggle.addEventListener("click", function(){
 const popupFail = document.querySelector(".popup-fail");
 const popupSuccess = document.querySelector(".popup-success");
 const form = document.querySelector(".form-register");
-const textValue = form.querySelector("input");
 const telValue = document.querySelector("[type=tel]");
 const closeFail = document.querySelector(".modal-fail--close");
 const closeSuccess = document.querySelector(".modal-success--close");
-
-form.addEventListener("submit", function (e) {
-	e.preventDefault();
-	if (!textValue.value || !telValue.value) {
-		popupFail.classList.add("modal-show__fail");
-	}
-	else {
-		popupSuccess.classList.add("modal-show__success");
-	}
-});
-closeFail.addEventListener("click", function (e){
-	e.preventDefault();
-	popupFail.classList.remove("modal-show__fail");
-});
-closeSuccess.addEventListener("click", function (e) {
-	e.preventDefault();
-	popupSuccess.classList.remove("modal-show__success") ;
-});
+if(form){
+	const textValue = form.querySelector("input");
+	form.addEventListener("submit", function (e) {
+		e.preventDefault();
+		if (!textValue.value || !telValue.value) {
+			popupFail.classList.add("modal-show__fail");
+		}
+		else {
+			popupSuccess.classList.add("modal-show__success");
+		}
+	});
+	closeFail.addEventListener("click", function (e){
+		e.preventDefault();
+		popupFail.classList.remove("modal-show__fail");
+	});
+	closeSuccess.addEventListener("click", function (e) {
+		e.preventDefault();
+		popupSuccess.classList.remove("modal-show__success") ;
+	});
+}
