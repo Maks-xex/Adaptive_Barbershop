@@ -53,7 +53,7 @@ let svgmin = require("gulp-svgmin")
 
  gulp.task("scripts", function() {
 	 return src([ // Берем файлы из источников
-		 'src/js/script.js', // Пользовательские скрипты, использующие библиотеку, должны быть подключены в конце
+		 'src/js/*.js', // Пользовательские скрипты, использующие библиотеку, должны быть подключены в конце
 	 ])
 		 .pipe(concat('script.js')) // Конкатенируем в один файл
 		 .pipe(uglify()) // Сжимаем JavaScript
