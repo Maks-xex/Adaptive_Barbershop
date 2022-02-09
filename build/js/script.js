@@ -1,14 +1,16 @@
-let menu = document.querySelector(".main-nav");
-let navToggle = document.querySelector(".main-nav__toggle");
-let userLoginForm = document.querySelector(".user-form__login");
-let modalForm = document.querySelector(".modal-login-form__wrapper");
+"use strict";
+
+const menu = document.querySelector(".main-nav");
+const navToggle = document.querySelector(".main-nav__toggle");
+const userLoginForm = document.querySelector(".user-form__login");
+const modalForm = document.querySelector(".modal-login-form__wrapper");
 
 //Login Form
-let close = modalForm.querySelector(".close-modal");
-let loginForm = modalForm.querySelector("#login-form");
-let login = modalForm.querySelector("[name=Login]");
-let password = modalForm.querySelector("[name=Password]");
-let modalLoginForm = document.querySelector(".modal-login__form");
+const close = modalForm.querySelector(".close-modal");
+const loginForm = modalForm.querySelector("#login-form");
+const login = modalForm.querySelector("[name=Login]");
+const password = modalForm.querySelector("[name=Password]");
+const modalLoginForm = document.querySelector(".modal-login__form");
 
 let isStorageSupport = true;
 let storage = "";
@@ -65,56 +67,29 @@ navToggle.addEventListener("click", function(){
 });
 
 // popup success and fail
-let popupFail = document.querySelector(".popup-fail");
-let popupSuccess = document.querySelector(".popup-success");
-let form = document.querySelector(".form-register");
-let textValue = form.querySelector("input");
-let telValue = document.querySelector("[type=tel]");
-let closeFail = document.querySelector(".modal-fail--close");
-let closeSuccess = document.querySelector(".modal-success--close");
-
-form.addEventListener("submit", function (e) {
-	e.preventDefault();
-	if (!textValue.value || !telValue.value) {
-		popupFail.classList.add("modal-show__fail");
-	}
-	else {
-		popupSuccess.classList.add("modal-show__success");
-	}
-});
-closeFail.addEventListener("click", function (e){
-	e.preventDefault();
-	popupFail.classList.remove("modal-show__fail");
-});
-closeSuccess.addEventListener("click", function (e) {
-	e.preventDefault();
-	popupSuccess.classList.remove("modal-show__success") ;
-});
-
-
-// var slider = document.querySelector(".slider-container");
-// var slides = Array.from(document.querySelectorAll(".slide"))
-
-// let isDragging = false,
-// startPos = 0,
-// currentTranslate = 0,
-// prevTranslate = 0,
-// animationID = 0,
-// currentIndex = 0
-
-// slides.forEach((slide, index) => {
-// const slideImage = slide.querySelector("img")
-// slideImage.addEventListener("dragstart", (e) => e.preventDefault())
-//touch
-// slide.addEventListener("touchstart", touchStart(index))
-// slide.addEventListener("touchend", touchEnd)
-// slide.addEventListener("touchmove", touchMove)
-
-// slide.addEventListener("mousedown", touchStart(index))
-// slide.addEventListener("mouseup", touchEnd)
-// slide.addEventListener("mouseleave", touchEnd)
-// slide.addEventListener("mousemove", touchMove)
-// })
-
-
-
+const popupFail = document.querySelector(".popup-fail");
+const popupSuccess = document.querySelector(".popup-success");
+const form = document.querySelector(".form-register");
+const telValue = document.querySelector("[type=tel]");
+const closeFail = document.querySelector(".modal-fail--close");
+const closeSuccess = document.querySelector(".modal-success--close");
+if(form){
+	const textValue = form.querySelector("input");
+	form.addEventListener("submit", function (e) {
+		e.preventDefault();
+		if (!textValue.value || !telValue.value) {
+			popupFail.classList.add("modal-show__fail");
+		}
+		else {
+			popupSuccess.classList.add("modal-show__success");
+		}
+	});
+	closeFail.addEventListener("click", function (e){
+		e.preventDefault();
+		popupFail.classList.remove("modal-show__fail");
+	});
+	closeSuccess.addEventListener("click", function (e) {
+		e.preventDefault();
+		popupSuccess.classList.remove("modal-show__success") ;
+	});
+}

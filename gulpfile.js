@@ -58,8 +58,8 @@ let svgmin = require("gulp-svgmin")
 		 .pipe(concat('script.js')) // Конкатенируем в один файл
 		 .pipe(uglify()) // Сжимаем JavaScript
 		 .pipe(rename("script.min.js"))
-		 .pipe(dest('src/js')) // Выгружаем готовый файл в папку назначения
-		 //.pipe(dest('build/js')) // Выгружаем готовый файл в папку назначения
+		//  .pipe(dest('src/js')) // Выгружаем готовый файл в папку назначения
+		 .pipe(dest('build/js')) // Выгружаем готовый файл в папку назначения
 		 .pipe(browserSync.stream()) // Триггерим Browsersync для обновления страницы
  });
 
@@ -82,7 +82,7 @@ gulp.task("style", function() {
 	.pipe(browserSync.stream()) // Сделаем инъекцию в браузер
 	.pipe(minify())
 	.pipe(rename("style.min.css"))
-	.pipe(dest("src/css"));
+	.pipe(dest("build/css"));
 });
 gulp.task('images', function() {
 	return src('src/img/src/**/*') // Берем все изображения из папки источника
