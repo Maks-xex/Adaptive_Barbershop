@@ -1,4 +1,4 @@
-My first adaptive site "Barbershop"
+#My first adaptive site "Barbershop"
 
-1.run install <br/>
-2.run start
+1. run install.bat 
+2. run start.bat
