@@ -1,6 +1,7 @@
 "use strict";
 
 if(screen.width < 768) {
+const page = [...document.querySelectorAll(".romb-icon > use")].reverse();
 const benefit = document.querySelector(".benefits__items"),
 slides = [...benefit.querySelectorAll("li")];
 
@@ -10,6 +11,7 @@ currentTranslate = 0,
 prevTranslate = 0,
 animationID = 0,
 currentIndex = 0;
+page[0].style = "fill: white";
 
 window.oncontextmenu = (evt) => {
     evt.preventDefault();
@@ -23,6 +25,7 @@ const setSliderPosition = () => {
 const setPositionByIndex = () => {
     currentTranslate = currentIndex * -window.outerWidth
     prevTranslate = currentTranslate;
+    page[currentIndex].style.fill = "white";
     setSliderPosition();
 }
 
@@ -58,8 +61,14 @@ const touchEnd = () => {
     isDragging = false
 
     const moveBy = currentTranslate - prevTranslate;
-    if(moveBy < -100 && currentIndex < slides.length -1){currentIndex +=1}
-    if(moveBy > 100 && currentIndex > 0){currentIndex--}
+    if(moveBy < -100 && currentIndex < slides.length -1){
+        currentIndex++;
+        page[currentIndex - 1].removeAttribute("style");
+    }
+    if(moveBy > 100 && currentIndex > 0){
+        currentIndex--;
+        page[currentIndex + 1].removeAttribute("style");
+    }
     setPositionByIndex()
 }
 
