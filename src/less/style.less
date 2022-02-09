@@ -47,6 +47,8 @@ body {
 	font-family: "PT Sans Narrow", "Arial", sans-serif;
 	color: #f7f4f1;
 	font-style: normal;
+	overflow-x: hidden;
+	touch-action: pan-y;
 }
 img {
 	max-width: 100%;
@@ -404,13 +406,13 @@ sup {
 	}
 }
 .vkontakte{
-	padding: 36px 40px;
+	padding: 33px 40px;
 }
 .facebook {
-	padding: 30px 42px;
+	padding: 26px 42px;
 }
 .instagram {
-	padding: 31px 33px;
+	padding: 28px 33px;
 }
 .button {
 	text-transform:uppercase;
@@ -856,6 +858,17 @@ img.last-element {
 			width:76%;
 		}
 	}
+	.benefits__items {
+		display: inline-flex;
+		transform: translate(0);
+		transition: transform 0.3s ease-out;
+		& li {
+			width: 100vw;
+		}
+		& img {
+			user-select:none;
+		}
+	}
 	.rect {
 		stroke:white;
 		stroke-width: 1px;
@@ -879,12 +892,10 @@ img.last-element {
 		text-align:center;
 	}
 	.benefits__cool {
-		display:none;
 		text-align:center;	
 	}
 	.benefits__rich {
 		text-align:center;	
-		display:none;
 	}
 	.news-and-action {
 		padding-top:37px;
@@ -921,13 +932,13 @@ img.last-element {
 	}
 	//social icon
 	.vkontakte{
-		padding: 36px 40px;
+		padding: 33px 40px;
 	}
 	.facebook {
-		padding: 30px 42px;
+		padding: 26px 42px;
 	}
 	.instagram {
-		padding: 31px 33px;
+		padding: 28px 33px;
 	}
 
 	.about-us {
@@ -1378,13 +1389,13 @@ img.last-element {
 		margin-bottom:59px;
 	}
 	.vkontakte{
-		padding: 36px 94px;
+		padding: 33px 94px;
 	}
 	.facebook {
-		padding: 30px 97px;
+		padding: 26px 94px;
 	}
 	.instagram {
-		padding: 31px 88px;
+		padding: 28px 88px;
 	}
 	@media(max-width:1199px) {
 		.social__icon {
@@ -1755,16 +1766,20 @@ img.last-element {
 			text-align:center;
 			display:flex;
 			margin: 0 6px;
+			& img {
+				position: relative;
+				top: 3px;
+			}
 		}
 	}
 	.vkontakte{
-		padding: 16px 17.5px;
+		padding: 11px 17.5px;
 	}
 	.facebook {
-		padding: 14px 20px;
+		padding: 11px 20px;
 	}
 	.instagram {
-		padding: 15px;
+		padding: 11px 15px;
 	}
 	.social__icon li {
 		&:nth-of-type(1) img {
