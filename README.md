@@ -1,1 +1,3 @@
-My first adaptive site "Barbershop"
+#How run project:
+1. Run install 
+2. Run start
